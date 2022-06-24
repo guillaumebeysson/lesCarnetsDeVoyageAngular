@@ -1,0 +1,27 @@
+.btn-outline-primary {
+    color: #FDAC0F;
+    background-color: #fff;
+    border-color: #FDAC0F; /*set the color you want here*/
+}
+.btn-outline-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #FDAC0F;
+    border-color: #FDAC0F; /*set the color you want here*/
+}
+.form-check-input{
+    color: #fff;
+    border: none;
+    background-color: #FDAC0F;
+    cursor: pointer;
+}
+footer{
+position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+@media(max-width:992px){
+    .navbar .rightPart{
+        flex-direction: column !important;
+    }
+}
