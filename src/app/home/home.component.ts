@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 toto($event:any, type:string) :void{
   console.log($event)
   const clickedCountry = worldmap.features.find((o:any) => o.properties.name===$event.name)
-  console.log(clickedCountry)
+  console.log("clickedCountry........."+clickedCountry)
 }
 
 
