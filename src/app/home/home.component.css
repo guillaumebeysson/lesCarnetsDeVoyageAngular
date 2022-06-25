@@ -159,8 +159,12 @@ span {
   overflow: hidden;
 }
 .Map .btn {
-  background-color: #fdac0f;
+  background-color: #fdae0f;
   border: solid 1px #fdac0f;
+}
+.Map .btn:hover {
+  background-color: #fcc24c;
+  border: solid 1px #fcc24c;
 }
 
 /************* MEDIA QUERRIES *******************/

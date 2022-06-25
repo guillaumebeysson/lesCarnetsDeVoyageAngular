@@ -18,34 +18,23 @@ export class HomeComponent implements OnInit {
     this.mapFunction();
   }
 
+  selectedCountry($event: any, type: string): void {
+    console.log($event);
+    const clickedCountry = worldmap.features.find(
+      (o: any) => o.properties.name === $event.name
+    );
+    console.log('clickedCoutry ....' + clickedCountry);
+  }
 
-    selectedCountry($event: any, type: string): void {
-      console.log($event);
-      const clickedCountry = worldmap.features.find(
-        (o: any) => o.properties.name === $event.name
-      );
-      console.log('clickedCoutry ....' + clickedCountry);
-    }
-  
-  mapFunction(): void{
-    // console.log("taata", worldmap.features[0].properties.name);
-    // console.log("taata", worldmap.features[5].properties.name);
-    
-    // let tata = document.getElementById('tata')
-
-    // console.log(tata);
-
-    echarts.registerMap('USA', worldmap, {
-
-      
-    });
-
-    
-
+  mapFunction(): void {
+    echarts.registerMap('USA', worldmap, {});
 
     // customisation de la map
 
     this.mapOption = {
+      aria: {
+        enabled: true,
+      },
       label: [
         {
           // Relative percentage
@@ -97,7 +86,7 @@ export class HomeComponent implements OnInit {
             itemStyle: {
               // couleur d'un pays au hover
               color: '#fff',
-              areaColor: '#fff',
+              areaColor: '#fcc24c',
             },
           },
           // couleur des pays
