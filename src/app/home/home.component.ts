@@ -20,10 +20,15 @@ export class HomeComponent implements OnInit {
 
   selectedCountry($event: any, type: string): void {
     console.log($event);
-    const clickedCountry = worldmap.features.find(
-      (o: any) => o.properties.name === $event.name
+    let nameCountry = $event.name;
+    const clickedCountryName = worldmap.features.find(
+      (o: any) => o.properties.name === nameCountry
     );
-    console.log('clickedCoutry ....' + clickedCountry);
+    const clickedCountryIso = worldmap.features.find(
+      (o: any) => o.properties.iso_a2 === $event.color
+    );
+    console.log('nom du pays sélectionné..........' + nameCountry);
+    console.log('nom du pays iso_a2..........' + $event.color);
   }
 
   mapFunction(): void {

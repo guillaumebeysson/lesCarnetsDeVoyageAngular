@@ -12,6 +12,7 @@ article {
 }
 .wrapper {
   height: 100vh;
+  overflow: hidden;
 }
 .form-inscrip button {
   width: 100px;
@@ -59,7 +60,7 @@ article {
 
 .form-inscrip embed {
   position: relative;
-  bottom: -100px;
+  bottom: 0px;
 }
 .form-inscrip {
   margin: 1em;
