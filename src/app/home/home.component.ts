@@ -3,6 +3,8 @@ import { EChartsOption } from 'echarts';
 import * as echarts from 'echarts';
 import worldmap from '../../assets/worldmap_small.json';
 import * as $ from 'jquery';
+import { HttpClient } from '@angular/common/http';
+import { CountryDetail } from './country-detail';
 
 @Component({
   selector: 'app-home',
@@ -10,25 +12,45 @@ import * as $ from 'jquery';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   mapOption: EChartsOption = {};
+
+  nameCountry: string = '';
+
+  countryDetail: CountryDetail = {};
 
   ngOnInit(): void {
     this.mapFunction();
   }
 
+  // On récupère le pays sélectionné via echarts
   selectedCountry($event: any, type: string): void {
+    // this.countryDetail = {};
     console.log($event);
-    let nameCountry = $event.name;
+    this.nameCountry = $event.name;
     const clickedCountryName = worldmap.features.find(
-      (o: any) => o.properties.name === nameCountry
+      (o: any) => o.properties.name === this.nameCountry
     );
-    const clickedCountryIso = worldmap.features.find(
-      (o: any) => o.properties.iso_a2 === $event.color
-    );
-    console.log('nom du pays sélectionné..........' + nameCountry);
-    console.log('nom du pays iso_a2..........' + $event.color);
+    // on récupère les données d'un pays via l'API RestCountries
+    this.http
+      .get(
+        'https://restcountries.com/v3.1/alpha/' +
+          clickedCountryName.properties.iso_a2
+      )
+      .subscribe((data: any) => {
+        this.countryDetail = {
+          flag: data[0].flags.png,
+          name: data[0].translations.fra.common,
+          capital: data[0].capital[0],
+          region: data[0].region,
+          area: data[0].area.toLocaleString('fr-FR'),
+          population: data[0].population.toLocaleString('fr-FR'),
+          googleMap: data[0].maps.googleMaps,
+        };
+        console.log(data);
+      });
+    console.log('nom du pays sélectionné..........' + this.nameCountry);
   }
 
   mapFunction(): void {
@@ -55,7 +77,7 @@ export class HomeComponent implements OnInit {
           {
             offset: 0,
             // couleur de fond de la map monde
-            color: '#fafafa',
+            color: '#005172',
           },
         ],
       },
@@ -69,7 +91,7 @@ export class HomeComponent implements OnInit {
 
           select: {
             itemStyle: {
-              // couleur du border des pays lorsque il est sélectionné
+              // couleur du border ou du background des pays lorsque il est sélectionné
               borderColor: '',
               areaColor: '#fafafa',
             },

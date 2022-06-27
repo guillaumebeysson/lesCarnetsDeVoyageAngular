@@ -246,25 +246,32 @@
         [options]="mapOption"
       ></div>
       <div
-        class="Map text-center d-flex flex-column justify-content-between"
-        style="padding: 15px"
+        class="Map d-flex flex-column justify-content-between cardCountry"
+        *ngIf="countryDetail.name"
       >
         <div>
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/1280px-Flag_of_France.svg.png"
+            src="{{ countryDetail.flag }}"
             alt=""
-            style="height: 50px; width: 100px"
+            style="height: 166px; width: 100%"
           />
         </div>
-        <!-- <h5>{{ nameCountry }}</h5> -->
-        <p>Capitale</p>
-        <p>Heure</p>
-        <p>Monnaie</p>
-        <p>Superficie</p>
-        <p>68 650 480 habitants</p>
+        <h6 style="margin: 0 15px" class="text-center">
+          <strong>{{ countryDetail.name }}</strong>
+        </h6>
+        <div class="infoCountry" style="margin: 0 15px">
+          <p><strong>Capitale:</strong> {{ countryDetail.capital }}</p>
+          <p><strong>Region: </strong> {{ countryDetail.region }}</p>
+          <p><strong>Superficie: </strong> {{ countryDetail.area }}</p>
+          <p><strong>Population: </strong> {{ countryDetail.population }}</p>
+          <a href="{{ countryDetail.googleMap }}" class="link-info"
+            >Lien Google Map</a
+          >
+        </div>
         <a
           href="#"
           class="btn btn-primary rounded-pill d-flex justify-content-center"
+          style="margin: 0 15px 15px 15px"
           >Accédez aux carnets de ce pays</a
         >
       </div>
