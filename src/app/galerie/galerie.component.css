@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap");
+
+.tittleH3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+h3 {
+    font-size: 5em;
+  }
+span {
+    display: block;
+    width: 30%; /*or whatever width you want the effect of <hr>*/
+    border-top: 3px solid black;
+    margin: 0 auto;
+}
+.container .blockImg{
+    overflow: hidden;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+    border-radius: 15px;
+}
+.container .blockImg img{
+    transition: all ease-in-out 0.3s; 
+    
+}
+.container .blockImg:hover img{
+    transform: scale(1.2);
+}

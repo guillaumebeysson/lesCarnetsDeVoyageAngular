@@ -77,7 +77,7 @@ export class HomeComponent implements OnInit {
           {
             offset: 0,
             // couleur de fond de la map monde
-            color: '#005172',
+            color: '#fafafa',
           },
         ],
       },

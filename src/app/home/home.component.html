@@ -49,7 +49,7 @@
             card title and make up the bulk of the card's content.
           </p>
           <a
-            href="#"
+            href="carnet"
             class="btn btn-primary rounded-pill d-flex justify-content-center"
             >Découvrir</a
           >
@@ -71,7 +71,7 @@
             bulk of the card's content.
           </p>
           <a
-            href="#"
+            href="carnet"
             class="btn btn-primary rounded-pill d-flex justify-content-center"
             >Découvrir</a
           >
@@ -93,7 +93,7 @@
             bulk of the card's content.
           </p>
           <a
-            href="#"
+            href="carnet"
             class="btn btn-primary rounded-pill d-flex justify-content-center"
             >Découvrir</a
           >
@@ -115,7 +115,7 @@
             bulk of the card's content.
           </p>
           <a
-            href="#"
+            href="carnet"
             class="btn btn-primary rounded-pill d-flex justify-content-center"
             >Découvrir</a
           >
@@ -146,7 +146,7 @@
             bulk of the card's content.
           </p>
           <a
-            href="#"
+            href="carnet"
             class="btn btn-primary rounded-pill d-flex justify-content-center"
             >Découvrir</a
           >
@@ -168,7 +168,7 @@
             bulk of the card's content. the card title and make up
           </p>
           <a
-            href="#"
+            href="carnet"
             class="btn btn-primary rounded-pill d-flex justify-content-center"
             >Découvrir</a
           >
@@ -190,7 +190,7 @@
             bulk of the card's content.
           </p>
           <a
-            href="#"
+            href="carnet"
             class="btn btn-primary rounded-pill d-flex justify-content-center"
             >Découvrir</a
           >
@@ -212,7 +212,7 @@
             bulk of the card's content.
           </p>
           <a
-            href="#"
+            href="carnet"
             class="btn btn-primary rounded-pill d-flex justify-content-center"
             >Découvrir</a
           >
@@ -222,12 +222,12 @@
   </section>
 
   <section id="destinationAleatoire">
-    <div class="tittleH3 m">
+    <div class="tittleH3">
       <h3 class="mt-5">Destination aléatoire</h3>
       <span></span>
     </div>
     <div class="btnDecouvreUnCarnet">
-      <a href="">Découvrez un carnet</a>
+      <a href="carnet">Découvrez un carnet</a>
     </div>
     <p class="text-center">laissez-vous surprendre !</p>
   </section>
@@ -237,9 +237,9 @@
       <h3 class="mt-5">Map monde</h3>
       <span></span>
     </div>
-    <div class="d-flex justify-content-around my-5">
+    <div class="d-flex justify-content-around my-5 flex-wrap">
       <div
-        class="Map"
+        class="Map mb-4"
         (chartClick)="selectedCountry($event, 'chartClick')"
         style="width: 800px; height: 500px"
         echarts
@@ -262,8 +262,8 @@
         <div class="infoCountry" style="margin: 0 15px">
           <p><strong>Capitale:</strong> {{ countryDetail.capital }}</p>
           <p><strong>Region: </strong> {{ countryDetail.region }}</p>
-          <p><strong>Superficie: </strong> {{ countryDetail.area }}</p>
-          <p><strong>Population: </strong> {{ countryDetail.population }}</p>
+          <p><strong>Superficie: </strong> {{ countryDetail.area }} km²</p>
+          <p><strong>Population: </strong> {{ countryDetail.population }} habitants</p>
           <a href="{{ countryDetail.googleMap }}" class="link-info"
             >Lien Google Map</a
           >

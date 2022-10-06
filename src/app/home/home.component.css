@@ -144,7 +144,7 @@ span {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 400;
-  font-size: 50px;
+  font-size: 40px;
 }
 #destinationAleatoire p {
   margin-top: -40px;
@@ -180,6 +180,33 @@ a {
 }
 
 /************* MEDIA QUERRIES *******************/
+
+@media (max-width: 769px) {
+  .blocTittleOnVideo {
+    width: 280px;
+    height: 280px;
+    margin: 250px auto;
+    margin-bottom: 350px;
+  }
+  .blocTittleOnVideo img {
+    width: 50px;
+    display: block;
+    margin: 20px auto 10px auto;
+  }
+  .blocTittleOnVideo h1 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: 2em;
+  }
+  .blocTittleOnVideo h2 {
+    font-size: small;
+    margin-top: 10px;
+  }
+  h3 {
+    font-size: 2em;
+  }
+}
 
 @media (max-width: 576px) {
   .blocTittleOnVideo {

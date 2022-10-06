@@ -28,13 +28,13 @@ article {
 }
 .form-inscrip span {
   margin: 20px 0 10px 0;
-
   font-size: large;
 }
 .form-inscrip a {
   margin: 5px 0;
   color: #f09545;
   transition: all 0.2s;
+  text-transform: lowercase;
 }
 .form-inscrip a:hover {
   color: white;

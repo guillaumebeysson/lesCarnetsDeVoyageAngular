@@ -9,5 +9,5 @@ import { HomeComponent } from './home/home.component';
   providers: [HomeComponent, HttpClient]
 })
 export class AppComponent {
-  title = 'front';
+  title = 'LesCarnetsDeVoyage';
 }
