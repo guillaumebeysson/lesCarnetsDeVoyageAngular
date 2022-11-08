@@ -181,9 +181,9 @@
           <p><strong>Region: </strong> {{ countryDetail.region }}</p>
           <p><strong>Superficie: </strong> {{ countryDetail.area }} km²</p>
           <p><strong>Population: </strong> {{ countryDetail.population }} habitants</p>
-          <a routerLink="{{ countryDetail.googleMap }}" class="link-info">Lien Google Map</a>
+          <a href="{{ countryDetail.googleMap }}" target="_blank" class="link-info">Lien Google Map</a>
         </div>
-        <a href="#" class="btn btn-primary rounded-pill d-flex justify-content-center"
+        <a routerLink="carnet" class="btn btn-primary rounded-pill d-flex justify-content-center"
           style="margin: 0 15px 15px 15px">Accédez aux carnets de ce pays</a>
       </div>
     </div>

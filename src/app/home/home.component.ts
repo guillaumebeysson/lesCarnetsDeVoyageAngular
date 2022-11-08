@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { EChartsOption } from 'echarts';
 import * as echarts from 'echarts';
 import worldmap from '../../assets/worldmap_small.json';
-import * as $ from 'jquery';
 import { HttpClient } from '@angular/common/http';
 import { CountryDetail } from './country-detail';
 
@@ -12,7 +11,7 @@ import { CountryDetail } from './country-detail';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, ) {}
 
   mapOption: EChartsOption = {};
 
@@ -23,6 +22,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.mapFunction();
   }
+
 
   // On récupère le pays sélectionné via echarts
   selectedCountry($event: any, type: string): void {
