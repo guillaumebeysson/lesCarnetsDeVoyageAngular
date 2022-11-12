@@ -8,6 +8,9 @@
     background-color: #FDAC0F;
     border-color: #FDAC0F; /*set the color you want here*/
 }
+form{
+    margin: inherit;
+}
 .form-check-input{
     color: #fff;
     border: none;

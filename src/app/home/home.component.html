@@ -226,7 +226,7 @@
       <h3 class="mt-5">Destination aléatoire</h3>
       <span></span>
     </div>
-    <div class="btnDecouvreUnCarnet">
+    <div class="btnDecouvreUnCarnet container mx-auto">
       <a routerLink="carnet">Découvrez un carnet</a>
     </div>
     <p class="text-center">laissez-vous surprendre !</p>
@@ -239,7 +239,8 @@
     </div>
     <div class="d-flex justify-content-around my-5 flex-wrap">
       <div class="Map mb-4" (chartClick)="selectedCountry($event, 'chartClick')" style="width: 800px; height: 500px"
-        echarts [options]="mapOption"></div>
+        echarts [options]="mapOption">
+      </div>
       <div class="Map d-flex flex-column justify-content-between cardCountry" *ngIf="countryDetail.name">
         <div>
           <img src="{{ countryDetail.flag }}" alt="" style="height: 166px; width: 100%" />
