@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap");
 
-article {
+/* article {
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -10,13 +10,35 @@ article {
   padding: 0;
   font-family: "Montserrat", sans-serif;
   position: relative;
+  z-index: -2;
 }
 .wrapper {
   height: 100vh;
   overflow: hidden;
   position:relative;
+  z-index: -1;
+} */
+article {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #0f89a3 100%);
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
 }
-.form-inscrip button {
+#separator{
+  width: 0px;
+  background-color: #f09545;
+}
+h1{
+  color: #f09545;
+  margin: 30px 0;
+}
+#allForms{
+ margin-top: 50px;
+}
+button {
   width: 100px;
   height: 30px;
   margin: 20px;
@@ -25,24 +47,24 @@ article {
   border: solid 1px white;
   border-radius: 5px;
 }
-.form-inscrip button:hover {
+button:hover {
   cursor: pointer;
 }
-.form-inscrip span {
+span {
   margin: 20px 0 10px 0;
   font-size: large;
 }
-.form-inscrip a {
+a {
   margin: 5px 0;
   color: #f09545;
   transition: all 0.2s;
   text-transform: lowercase;
 }
-.form-inscrip a:hover {
+a:hover {
   color: white;
   cursor: pointer;
 }
-.form-inscrip .button-inscrip {
+.button-inscrip {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,32 +76,22 @@ article {
   text-decoration: none;
   align-items: center;
 }
-.form-inscrip button {
+button {
   height: 50px;
   width: 200px;
   color: white;
 }
 
-.form-inscrip embed {
+embed {
   position: relative;
   bottom: 0px;
 }
-.form-inscrip {
-  margin: 1em;
-  margin-top: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  position:absolute;
-}
-.form-inscrip p {
+p {
   text-decoration: #f09545 underline;
   margin-bottom: 5px;
   font-size: x-large;
 }
-.form-inscrip input {
+input {
   margin: 0 auto;
   margin-bottom: 20px;
   width: 20rem;
@@ -88,13 +100,21 @@ article {
   border-radius: 5px;
   color: black;
 }
-.form-inscrip {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+.form-connect{
   color: #fff;
   text-align: center;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-inscrip {
+  color: #fff;
+  text-align: center;
+  margin: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #stars {
   width: 1px;
@@ -659,5 +679,11 @@ article {
   }
   to {
     transform: translateY(-2000px);
+  }
+}
+
+@media (max-width: 700px) {
+  #allForms{
+    flex-direction: column;
   }
 }
