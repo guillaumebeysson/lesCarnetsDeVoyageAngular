@@ -4,20 +4,22 @@
     <input type="text" placeholder="Titre du carnet">
   </div>
 
-  <div id="carnetInformations">
+  <section id="carnetInformations" class="d-flex justify-content-around">
     <div id="leftPartCarnetInformations">
-      <p><i class="fas fa-user"></i> name</p>
-      <div id="countrySelected">
+      <div class="my-2">
+        <p><i class="fas fa-user"></i> name</p>
+      </div>
+      <div id="countrySelected" class="my-2">
         <p><i class="fas fa-flag"></i> Pays</p>
-        <select name="countries" id="countries"></select>
+        <select name="countries" id="countries" class="form-control"></select>
       </div>
-      <div id="timeTravel">
-        <p><i class="fas fa-hourglass-start"></i> Durée du voyage</p>
-        <input type="number">
+      <div id="timeTravel" class="my-2">
+        <p><i class="fas fa-hourglass-start"></i> Durée du voyage (jours)</p>
+        <input type="number" class="form-control">
       </div>
-      <div id="departurePeriod">
+      <div id="departurePeriod" class="my-2">
         <p><i class="far fa-calendar-alt"></i> Période de départ</p>
-        <select name="month" id="month">
+        <select name="month" id="month" class="form-control">
           <option disabled selected value> -- mois -- </option>
           <option value="Janvier">Janvier</option>
           <option value="Fevrier">Fervrier</option>
@@ -35,18 +37,19 @@
       </div>
     </div>
     <div id="rightPartCarnetInformations">
-      <div id="organisation">
+      <div class="my-2"><span><br></span></div>
+      <div id="organisation" class="my-2">
         <p><i class="fas fa-route"></i> Organisation</p>
-        <select name="organisation" id="organisationEnum">
+        <select name="organisation" id="organisationEnum" class="form-control">
           <option disabled selected value> -- organisation -- </option>
           <option value="Personnel">Itinéraire personnel</option>
           <option value="Famille">Agence de voyage</option>
           <option value="Aucune">Aucun itinéraire prédéfini</option>
         </select>
       </div>
-      <div id="situation">
+      <div id="situation" class="my-2">
         <p><i class="fas fa-hiking"></i> Situation</p>
-        <select name="situation" id="">
+        <select name="situation" id="" class="form-control">
           <option disabled selected value> -- situation -- </option>
           <option value="Solo">Solo</option>
           <option value="Famille">Famille</option>
@@ -54,9 +57,9 @@
           <option value="Couple">Couple</option>
         </select>
       </div>
-      <div id="">
+      <div id="" class="my-2">
         <p><i class="fas fa-shuttle-van"></i> Moyen de transport</p>
-        <select id="" name="">
+        <select id="" name="" class="form-control">
           <option disabled selected value> -- moyen de transport -- </option>
           <option value="Van">Camping-car / Van</option>
           <option value="Avion">Avion</option>
@@ -65,5 +68,32 @@
         </select>
       </div>
     </div>
-  </div>
+  </section>
+
+  <section id="introductionAndPicture1">
+    <div id="introduction">
+      <textarea name="introduction" id="introduction" placeholder="Introduction..."></textarea>
+      <div class="compteurs" id="compteur-textarea-introduction">0/600</div>
+    </div>
+    <div class="img-add">
+      <input type="file">
+    </div>
+  </section>
+
+  <span class="separator"></span>
+
+  <section id="introductionAndPicture1">
+    <div id="introduction">
+      <textarea name="introduction" id="introduction" placeholder="Introduction..."></textarea>
+      <div class="compteurs" id="compteur-textarea-introduction">0/600</div>
+    </div>
+    <div class="img-add">
+      <input type="file" id="fileUploadInput" (input)="handleFileInput($event)" #fileInput hidden>
+      <div class="drop-zone" (drop)="onDrop($event)" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)">
+        <p class="m-0">Glissez-déposez une image ici...</p>
+        <img *ngIf="imageUrl" class="imgPreview" [src]="imageUrl">
+      </div>
+    </div>
+  </section>
+
 </div>

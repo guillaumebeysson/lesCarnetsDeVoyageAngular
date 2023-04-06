@@ -1,7 +1,90 @@
-#carnetTitle input{
+section {
+    margin: 50px 0;
+}
+
+.separator {
+    display: block;
+    width: 90%;
+    height: 1px;
+    background-color: grey;
+}
+
+#carnetTitle input {
     height: 50px;
     width: 300px;
     text-align: center;
     color: #FDAC0F;
     font-weight: bold;
+}
+
+#carnetInformations input,
+select {
+    width: 300px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FDAC0F;
+    font-weight: bold;
+}
+
+#carnetInformations select option {
+    color: #FDAC0F;
+}
+
+#carnetInformations p {
+    margin: 0;
+}
+
+textarea {
+    border: solid 2px #0f89a3;
+    overflow: hidden;
+}
+
+#introductionAndPicture1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#introduction {
+    width: 600px;
+    border-radius: 5px;
+    min-height: 300px;
+    padding: 10px;
+}
+
+.compteurs {
+    color: #0f89a3;
+    /* width: 50px; */
+    position: relative;
+    top: -30px;
+    text-align: center;
+}
+
+
+
+.drop-zone {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    text-align: center;
+    width: 350px;
+    height: 350px;
+}
+
+.drop-zone.drag-over {
+    background-color: #f7f7f7;
+}
+
+.imgPreview {
+    position: relative;
+    top: -24px;
+    border-radius: 5px;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.img-add p {
+    position: relative;
+    top: 140px;
 }
