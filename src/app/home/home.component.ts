@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
         this.countryDetail = {
           flag: data[0].flags.png,
           name: data[0].translations.fra.common,
+          countryCode: data[0].cca2,
           capital: data[0].capital[0],
           region: data[0].region,
           area: data[0].area.toLocaleString('fr-FR'),

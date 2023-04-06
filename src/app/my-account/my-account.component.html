@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 class="text-center my-5">Profil de Guillaume</h1>
+  <div id="personalInformations">
+    <h2 class="my-3">Mes informations personnelles:</h2>
+    <ul>
+      <li>Name:</li>
+      <li>Email:</li>
+      <li>Nationalité:
+        <select>
+          <option *ngFor="let pays of paysListe" [value]="pays.translations.fra.common">{{pays.translations.fra.common}}
+          </option>
+        </select>
+      </li>
+    </ul>
+  </div>
+  <div id="carnets">
+    <h2 class="my-3">Mes carnets:</h2>
+  </div>
+</div>

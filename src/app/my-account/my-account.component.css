@@ -1,0 +1,8 @@
+#personalInformations ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#personalInformations li{
+    list-style: none;
+}
