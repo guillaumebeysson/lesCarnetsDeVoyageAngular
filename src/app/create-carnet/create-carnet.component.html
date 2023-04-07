@@ -1,7 +1,7 @@
 <div class="container">
 
-  <div id="carnetTitle" class="text-center my-5">
-    <input type="text" placeholder="Titre du carnet">
+  <div id="carnetTitle" class="text-center my-5 w-auto">
+    <input type="text" id="inputTitle" placeholder="Titre du carnet">
   </div>
 
   <section id="carnetInformations" class="d-flex justify-content-around">
@@ -11,11 +11,15 @@
       </div>
       <div id="countrySelected" class="my-2">
         <p><i class="fas fa-flag"></i> Pays</p>
-        <select name="countries" id="countries" class="form-control"></select>
+        <select name="countries" id="countries" class="form-control">
+          <option disabled selected value> -- pays -- </option>
+          <option *ngFor="let pays of paysListe" [value]="pays.translations.fra.common">{{pays.translations.fra.common}}
+          </option>
+        </select>
       </div>
       <div id="timeTravel" class="my-2">
         <p><i class="fas fa-hourglass-start"></i> Durée du voyage (jours)</p>
-        <input type="number" class="form-control">
+        <input type="number" min="0" class="form-control" placeholder="0">
       </div>
       <div id="departurePeriod" class="my-2">
         <p><i class="far fa-calendar-alt"></i> Période de départ</p>
@@ -72,28 +76,48 @@
 
   <section id="introductionAndPicture1">
     <div id="introduction">
-      <textarea name="introduction" id="introduction" placeholder="Introduction..."></textarea>
+      <textarea name="introduction" id="introduction" placeholder="Introduction..." #introduction
+        maxlength="600"></textarea>
       <div class="compteurs" id="compteur-textarea-introduction">0/600</div>
     </div>
     <div class="img-add">
-      <input type="file">
+      <input type="file" id="fileUploadInput1" (input)="handleFileInput($event)" #fileInput1 hidden>
+      <div class="drop-zone" (drop)="onDrop($event, 1)" (dragover)="onDragOver($event)"
+        (dragleave)="onDragLeave($event)">
+        <p class="m-0">Glissez-déposez une image ici...</p>
+        <img *ngIf="imageUrl1" class="imgPreview" [src]="imageUrl1">
+      </div>
     </div>
   </section>
 
   <span class="separator"></span>
 
-  <section id="introductionAndPicture1">
-    <div id="introduction">
-      <textarea name="introduction" id="introduction" placeholder="Introduction..."></textarea>
-      <div class="compteurs" id="compteur-textarea-introduction">0/600</div>
+  <section id="descriptionAndPictures">
+    <div id="description">
+      <textarea name="description" id="description" placeholder="Description..." #description></textarea>
+      <div class="compteurs" id="compteur-textarea-description">0/600</div>
     </div>
-    <div class="img-add">
-      <input type="file" id="fileUploadInput" (input)="handleFileInput($event)" #fileInput hidden>
-      <div class="drop-zone" (drop)="onDrop($event)" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)">
-        <p class="m-0">Glissez-déposez une image ici...</p>
-        <img *ngIf="imageUrl" class="imgPreview" [src]="imageUrl">
+    <div id="DescriptionsPictures">
+      <div class="img-add">
+        <input type="file" id="fileUploadInput2" (input)="handleFileInput($event)" #fileInput2 hidden>
+        <div class="drop-zone" (drop)="onDrop($event, 2)" (dragover)="onDragOver($event)"
+          (dragleave)="onDragLeave($event)">
+          <p class="m-0">Glissez-déposez une image ici...</p>
+          <img *ngIf="imageUrl2" class="imgPreview" [src]="imageUrl2">
+        </div>
+      </div>
+      <div class="img-add">
+        <input type="file" id="fileUploadInput3" (input)="handleFileInput($event)" #fileInput3 hidden>
+        <div class="drop-zone" (drop)="onDrop($event, 3)" (dragover)="onDragOver($event)"
+          (dragleave)="onDragLeave($event)">
+          <p class="m-0">Glissez-déposez une image ici...</p>
+          <img *ngIf="imageUrl3" class="imgPreview" [src]="imageUrl3">
+        </div>
       </div>
     </div>
   </section>
+  <div id="btnValid" class="my-5">
+    <button>Valider le carnet</button>
+  </div>
 
 </div>

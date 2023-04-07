@@ -7,14 +7,16 @@ section {
     width: 90%;
     height: 1px;
     background-color: grey;
+    margin: 0 auto;
 }
 
 #carnetTitle input {
     height: 50px;
-    width: 300px;
+    min-width: 300px;
     text-align: center;
     color: #FDAC0F;
     font-weight: bold;
+    font-size: 25px;
 }
 
 #carnetInformations input,
@@ -67,8 +69,9 @@ textarea {
     background-color: #e0e0e0;
     border-radius: 5px;
     text-align: center;
-    width: 350px;
-    height: 350px;
+    width: 360px;
+    height: 360px;
+    border: dashed 1px grey;
 }
 
 .drop-zone.drag-over {
@@ -77,14 +80,50 @@ textarea {
 
 .imgPreview {
     position: relative;
-    top: -24px;
+    top: -20px;
     border-radius: 5px;
     width: 350px;
     height: 350px;
     object-fit: cover;
 }
-
+.img-add{
+    margin: 10px;
+}
 .img-add p {
     position: relative;
     top: 140px;
+}
+
+#descriptionAndPictures{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#description {
+    width: 600px;
+    border-radius: 5px;
+    min-height: 300px;
+    padding: 10px;
+}
+#DescriptionsPictures{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#btnValid{
+    text-align: center;
+}
+#btnValid button{
+    border: solid 1px #FDAC0F;
+    border-radius: 5px;
+    padding: 10px;
+    color: #0f89a3;
+    font-size: 20px;
+    color: #FDAC0F;
+    background-color: #fafafa;
+}
+#btnValid button:hover{
+    background-color: #FDAC0F;
+    color: #fff;
 }
