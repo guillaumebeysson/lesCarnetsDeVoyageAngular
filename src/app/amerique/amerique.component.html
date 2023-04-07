@@ -2,7 +2,15 @@
   <h1>Amerique</h1>
 </section>
 
-<section id="conutriesListSection">
-  <div></div>
 
+<section id="countriesListSection">
+  <div *ngFor="let countriesAmerica of countriesData" class="cardCountries">
+    <img [src]="countriesAmerica.flags.svg" alt="Drapeau de {{ countriesAmerica.name.common }}" />
+    <div class="tittleCard">{{ countriesAmerica.name.common }}</div>
+    <p>code: {{ countriesAmerica.cca2 }}</p>
+    <p>google map: <a [href]="countriesAmerica.maps.googleMaps">lien
+        vers {{ countriesAmerica.name.common }}</a></p>
+    <p>capitale: {{ countriesAmerica.capital[0] }}</p>
+    <p>superficie: {{ countriesAmerica.area }} km²</p>
+  </div>
 </section>
