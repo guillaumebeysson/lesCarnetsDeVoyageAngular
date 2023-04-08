@@ -86,3 +86,44 @@ span {
     background-color: #fafafa;
     color: #FDAC0F;
 }
+
+/* ANIMATION TITLE */
+
+.animate {
+    position: relative;
+    color: transparent;
+    padding: 10px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 20px;
+    animation: textappear .5s .5s forwards;
+}
+
+.animate::before {
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+}
+
+.right::before {
+    animation: sliderRight 2s forwards;
+}
+
+@keyframes textappear {
+    100% {
+        color: #FFF;
+    }
+}
+
+@keyframes sliderRight {
+    0% {
+        right: 100%;
+    }
+
+    100% {
+        right: -100%;
+    }
+}
