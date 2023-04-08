@@ -15,6 +15,10 @@ import { DestinationsComponent } from './destinations/destinations.component';
 import { MyAccountComponent } from './my-account/my-account.component';
 import { CreateCarnetComponent } from './create-carnet/create-carnet.component';
 import { AmeriqueComponent } from './amerique/amerique.component';
+import { EuropeComponent } from './europe/europe.component';
+import { AfriqueComponent } from './afrique/afrique.component';
+import { AsieComponent } from './asie/asie.component';
+import { OceanieComponent } from './oceanie/oceanie.component';
 
 
 @NgModule({
@@ -28,6 +32,10 @@ import { AmeriqueComponent } from './amerique/amerique.component';
     MyAccountComponent,
     CreateCarnetComponent,
     AmeriqueComponent,
+    EuropeComponent,
+    AfriqueComponent,
+    AsieComponent,
+    OceanieComponent,
   ],
   imports: [
     BrowserModule,

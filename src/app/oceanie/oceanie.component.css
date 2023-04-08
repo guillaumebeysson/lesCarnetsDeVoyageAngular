@@ -1,8 +1,7 @@
-#americaFullScreen {
-    background-image: url("../../assets/ressourcesInternes/picturesContinents/america.jpeg");
+#oceaniaFullScreen {
+    background-image: url("../../assets/ressourcesInternes/picturesContinents/oceania.jpg");
     height: 100vh;
     background-repeat: no-repeat;
-    object-fit: cover;
     display: flex;
     justify-content: center;
     align-items: center;

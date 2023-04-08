@@ -1,5 +1,5 @@
-#americaFullScreen {
-    background-image: url("../../assets/ressourcesInternes/picturesContinents/america.jpeg");
+#europaFullScreen {
+    background-image: url("../../assets/ressourcesInternes/picturesContinents/europe.jpg");
     height: 100vh;
     background-repeat: no-repeat;
     object-fit: cover;

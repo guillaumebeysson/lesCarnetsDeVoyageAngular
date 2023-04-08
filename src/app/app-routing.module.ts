@@ -8,6 +8,10 @@ import { DestinationsComponent } from "./destinations/destinations.component";
 import { MyAccountComponent } from './my-account/my-account.component';
 import { CreateCarnetComponent } from './create-carnet/create-carnet.component';
 import { AmeriqueComponent } from './amerique/amerique.component';
+import { EuropeComponent } from './europe/europe.component';
+import { AfriqueComponent } from './afrique/afrique.component';
+import { AsieComponent } from './asie/asie.component';
+import { OceanieComponent } from './oceanie/oceanie.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +22,10 @@ const routes: Routes = [
   { path: 'myAccount', component: MyAccountComponent },
   { path: 'createCarnet', component: CreateCarnetComponent },
   { path: 'destinations/amerique', component: AmeriqueComponent },
+  { path: 'destinations/europe', component: EuropeComponent },
+  { path: 'destinations/afrique', component: AfriqueComponent },
+  { path: 'destinations/asie', component: AsieComponent },
+  { path: 'destinations/oceanie', component: OceanieComponent },
 ];
 
 @NgModule({

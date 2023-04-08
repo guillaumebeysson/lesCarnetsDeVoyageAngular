@@ -1,0 +1,26 @@
+
+
+<section id="africaFullScreen">
+    <h1>Afrique</h1>
+  </section>
+  
+  
+  <div class="tittleH3 my-5">
+    <h3 class="mt-5">Liste des pays d'afrique</h3>
+    <span></span>
+  </div>
+  
+  <section id="countriesListSection">
+    <div *ngFor="let countriesAfrica of countriesData" class="cardCountries">
+      <img [src]="countriesAfrica.flags.png" class="cardCountryImg" alt="Drapeau de {{ countriesAfrica.name.common }}" />
+      <div class="tittleCard my-3">{{ countriesAfrica.name.common }}</div>
+      <div class="cardCountryInfo">
+        <!-- <p>code: {{ countriesAfrica.cca2 }}</p> -->
+        <p><i class="fa-solid fa-landmark-flag"></i> : {{ countriesAfrica.capital[0] }}</p>
+        <p><i class="fa-solid fa-chart-area"></i> : {{ countriesAfrica.area }} km²</p>
+        <p><i class="fa-brands fa-google"></i> <a [href]="countriesAfrica.maps.googleMaps" target="_blank"> : {{ countriesAfrica.name.common }}</a></p>
+        <button class="my-2">Voir les carnets</button>
+      </div>
+    </div>
+  </section>
+

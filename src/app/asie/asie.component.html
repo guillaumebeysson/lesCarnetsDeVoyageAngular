@@ -1,0 +1,23 @@
+<section id="asiaFullScreen">
+    <h1>Asie</h1>
+  </section>
+  
+  
+  <div class="tittleH3 my-5">
+    <h3 class="mt-5">Liste des pays d'asie</h3>
+    <span></span>
+  </div>
+  
+  <section id="countriesListSection">
+    <div *ngFor="let countriesAsia of countriesData" class="cardCountries">
+      <img [src]="countriesAsia.flags.png" class="cardCountryImg" alt="Drapeau de {{ countriesAsia.name.common }}" />
+      <div class="tittleCard my-3">{{ countriesAsia.name.common }}</div>
+      <div class="cardCountryInfo">
+        <!-- <p>code: {{ countriesAsia.cca2 }}</p> -->
+        <p><i class="fa-solid fa-landmark-flag"></i> : {{ countriesAsia.capital ? countriesAsia.capital[0] : 'null' }}</p>
+        <p><i class="fa-solid fa-chart-area"></i> : {{ countriesAsia.area }} km²</p>
+        <p><i class="fa-brands fa-google"></i> <a [href]="countriesAsia.maps.googleMaps" target="_blank"> : {{ countriesAsia.name.common }}</a></p>
+        <button class="my-2">Voir les carnets</button>
+      </div>
+    </div>
+  </section>

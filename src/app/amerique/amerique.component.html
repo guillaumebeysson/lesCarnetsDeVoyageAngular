@@ -3,14 +3,21 @@
 </section>
 
 
+<div class="tittleH3 my-5">
+  <h3 class="mt-5">Liste des pays d'amérique</h3>
+  <span></span>
+</div>
+
 <section id="countriesListSection">
   <div *ngFor="let countriesAmerica of countriesData" class="cardCountries">
-    <img [src]="countriesAmerica.flags.svg" alt="Drapeau de {{ countriesAmerica.name.common }}" />
-    <div class="tittleCard">{{ countriesAmerica.name.common }}</div>
-    <p>code: {{ countriesAmerica.cca2 }}</p>
-    <p>google map: <a [href]="countriesAmerica.maps.googleMaps">lien
-        vers {{ countriesAmerica.name.common }}</a></p>
-    <p>capitale: {{ countriesAmerica.capital[0] }}</p>
-    <p>superficie: {{ countriesAmerica.area }} km²</p>
+    <img [src]="countriesAmerica.flags.svg" class="cardCountryImg" alt="Drapeau de {{ countriesAmerica.name.common }}" />
+    <div class="tittleCard my-3">{{ countriesAmerica.name.common }}</div>
+    <div class="cardCountryInfo">
+      <!-- <p>code: {{ countriesAmerica.cca2 }}</p> -->
+      <p><i class="fa-solid fa-landmark-flag"></i> : {{ countriesAmerica.capital[0] }}</p>
+      <p><i class="fa-solid fa-chart-area"></i> : {{ countriesAmerica.area }} km²</p>
+      <p><i class="fa-brands fa-google"></i> <a [href]="countriesAmerica.maps.googleMaps" target="_blank"> : {{ countriesAmerica.name.common }}</a></p>
+      <button class="my-2">Voir les carnets</button>
+    </div>
   </div>
 </section>

@@ -1,29 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-interface CountriesAmerica {
+interface CountriesAsia {
   name: { common: string };
   cca2: string;
   area: string;
-  capital: string[];
+  capital: string[] | null;
   languages: string[];
-  flags: { svg: string };
+  flags: { png: string };
   maps: {googleMaps: string};
 }
 
 @Component({
-  selector: 'app-amerique',
-  templateUrl: './amerique.component.html',
-  styleUrls: ['./amerique.component.css']
+  selector: 'app-asie',
+  templateUrl: './asie.component.html',
+  styleUrls: ['./asie.component.css']
 })
+export class AsieComponent implements OnInit {
 
-export class AmeriqueComponent implements OnInit {
-  countriesData: CountriesAmerica[] | undefined;
+  countriesData: CountriesAsia[] | undefined;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get<CountriesAmerica[]>('https://restcountries.com/v3.1/region/americas').subscribe((data) => {
+    this.http.get<CountriesAsia[]>('https://restcountries.com/v3.1/region/asia').subscribe((data) => {
       this.countriesData = data.sort((a, b) => a.name.common.localeCompare(b.name.common));
       console.log(this.countriesData);
     });

@@ -1,0 +1,25 @@
+
+
+<section id="europaFullScreen">
+    <h1>Europe</h1>
+  </section>
+  
+  
+  <div class="tittleH3 my-5">
+    <h3 class="mt-5">Liste des pays d'europe</h3>
+    <span></span>
+  </div>
+  
+  <section id="countriesListSection">
+    <div *ngFor="let countriesEuropa of countriesData" class="cardCountries">
+      <img [src]="countriesEuropa.flags.png" class="cardCountryImg" alt="Drapeau de {{ countriesEuropa.name.common }}" />
+      <div class="tittleCard my-3">{{ countriesEuropa.name.common }}</div>
+      <div class="cardCountryInfo">
+        <!-- <p>code: {{ countriesEuropa.cca2 }}</p> -->
+        <p><i class="fa-solid fa-landmark-flag"></i> : {{ countriesEuropa.capital[0] }}</p>
+        <p><i class="fa-solid fa-chart-area"></i> : {{ countriesEuropa.area }} km²</p>
+        <p><i class="fa-brands fa-google"></i> <a [href]="countriesEuropa.maps.googleMaps" target="_blank"> : {{ countriesEuropa.name.common }}</a></p>
+        <button class="my-2">Voir les carnets</button>
+      </div>
+    </div>
+  </section>
