@@ -1,6 +1,7 @@
 #asiaFullScreen {
     background-image: url("../../assets/ressourcesInternes/picturesContinents/asia.jpg");
     height: 100vh;
+    background-size: cover;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;

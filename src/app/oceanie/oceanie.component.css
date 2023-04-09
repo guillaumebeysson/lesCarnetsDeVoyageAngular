@@ -1,5 +1,6 @@
 #oceaniaFullScreen {
     background-image: url("../../assets/ressourcesInternes/picturesContinents/oceania.jpg");
+    background-size: cover;
     height: 100vh;
     background-repeat: no-repeat;
     display: flex;

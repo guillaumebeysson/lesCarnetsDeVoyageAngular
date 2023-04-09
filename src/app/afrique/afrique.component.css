@@ -1,6 +1,7 @@
 #africaFullScreen {
     background-image: url("../../assets/ressourcesInternes/picturesContinents/africa.jpg");
     height: 100vh;
+    background-size: cover;
     background-repeat: no-repeat;
     object-fit: cover;
     display: flex;

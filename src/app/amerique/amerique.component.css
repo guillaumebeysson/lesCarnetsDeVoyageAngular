@@ -1,6 +1,7 @@
 #americaFullScreen {
     background-image: url("../../assets/ressourcesInternes/picturesContinents/america.jpeg");
     height: 100vh;
+    background-size: cover;
     background-repeat: no-repeat;
     object-fit: cover;
     display: flex;
