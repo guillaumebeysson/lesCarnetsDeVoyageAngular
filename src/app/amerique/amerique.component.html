@@ -10,13 +10,13 @@
 
 <section id="countriesListSection">
   <div *ngFor="let countriesAmerica of countriesData" class="cardCountries">
-    <img [src]="countriesAmerica.flags.svg" class="cardCountryImg" alt="Drapeau de {{ countriesAmerica.name.common }}" />
-    <div class="tittleCard my-3">{{ countriesAmerica.name.common }}</div>
+    <img [src]="countriesAmerica.flags.svg" class="cardCountryImg" alt="Drapeau de {{ countriesAmerica.translations.fra.common }}" />
+    <div class="tittleCard my-3">{{ countriesAmerica.translations.fra.common }}</div>
     <div class="cardCountryInfo">
       <!-- <p>code: {{ countriesAmerica.cca2 }}</p> -->
       <p><i class="fa-solid fa-landmark-flag"></i> : {{ countriesAmerica.capital[0] }}</p>
       <p><i class="fa-solid fa-chart-area"></i> : {{ countriesAmerica.area }} km²</p>
-      <p><i class="fa-brands fa-google"></i> <a [href]="countriesAmerica.maps.googleMaps" target="_blank"> : {{ countriesAmerica.name.common }}</a></p>
+      <p><i class="fa-brands fa-google"></i> <a [href]="countriesAmerica.maps.googleMaps" target="_blank"> : {{ countriesAmerica.translations.fra.common }}</a></p>
       <button class="my-2">Voir les carnets</button>
     </div>
   </div>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 interface CountriesAsia {
-  name: { common: string };
+  translations: { fra: { common: string } };
   cca2: string;
   area: string;
   capital: string[] | null;
@@ -24,7 +24,7 @@ export class AsieComponent implements OnInit {
 
   ngOnInit() {
     this.http.get<CountriesAsia[]>('https://restcountries.com/v3.1/region/asia').subscribe((data) => {
-      this.countriesData = data.sort((a, b) => a.name.common.localeCompare(b.name.common));
+      this.countriesData = data.sort((a, b) => a.translations.fra.common.localeCompare(b.translations.fra.common));
       console.log(this.countriesData);
     });
   }
