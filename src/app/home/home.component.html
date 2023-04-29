@@ -21,102 +21,40 @@
       <span></span>
     </div>
     <div class="allCards my-5">
-      <div class="Card">
+      <div class="Card" *ngFor="let carnet of carnets">
         <div class="cover">
-          <img src="../../assets/imagesPourCards/1.jpg" alt="image">
+          <img src="{{carnet.picture1}}" alt="image">
         </div>
         <div class="details">
           <div class="card-img-opened">
-            <img src="../../assets/imagesPourCards/1.jpg" class="card-img-top" alt="..." />
+            <img src="{{carnet.picture1}}" class="card-img-top" alt="..." />
           </div>
           <div class="card-body">
             <h5 class="card-title">
-              Card title Card title Card title Card titleCard title
+              {{carnet.title}}
             </h5>
             <p class="pseudo text-secondary">
-              @Mon pseudo est super long et il dépasse de la card
+              @Mon pseudo
             </p>
             <p id="description" class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content. Some quick example text to build on the
-              card title and make up the bulk of the card's content.
-            </p>
-            <a routerLink="carnet" class="btn btn-primary rounded-pill d-flex justify-content-center">Découvrir</a>
-          </div>
-        </div>
-      </div>
-      <div class="Card">
-        <div class="cover">
-          <img src="../../assets/imagesPourCards/2.jpg" alt="image">
-        </div>
-        <div class="details">
-          <div class="card-img-opened">
-            <img src="../../assets/imagesPourCards/2.jpg" class="card-img-top" alt="..." />
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">
-              Card title
-            </h5>
-            <p class="pseudo text-secondary">
-              @pseudo
-            </p>
-            <p id="description" class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content. Some quick example text to build on the card title and make up the
-              bulk of the card's content. Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a routerLink="carnet" class="btn btn-primary rounded-pill d-flex justify-content-center">Découvrir</a>
-          </div>
-        </div>
-      </div>
-      <div class="Card">
-        <div class="cover">
-          <img src="../../assets/imagesPourCards/3.jpg" alt="image">
-        </div>
-        <div class="details">
-          <div class="card-img-opened">
-            <img src="../../assets/imagesPourCards/3.jpg" class="card-img-top" alt="..." />
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">
-              Card title
-            </h5>
-            <p class="pseudo text-secondary">
-              @pseudo
-            </p>
-            <p id="description" class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a routerLink="carnet" class="btn btn-primary rounded-pill d-flex justify-content-center">Découvrir</a>
-          </div>
-        </div>
-      </div>
-      <div class="Card">
-        <div class="cover">
-          <img src="../../assets/imagesPourCards/4.jpg" alt="image">
-        </div>
-        <div class="details">
-          <div class="card-img-opened">
-            <img src="../../assets/imagesPourCards/4.jpg" class="card-img-top" alt="..." />
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">
-              Card title
-            </h5>
-            <p class="pseudo text-secondary">
-              @pseudo
-            </p>
-            <p id="description" class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              {{carnet.description}}
             </p>
             <a routerLink="carnet" class="btn btn-primary rounded-pill d-flex justify-content-center">Découvrir</a>
           </div>
         </div>
       </div>
     </div>
+  </section>
+
+  <section id="tousLesCarnets">
+    <div class="tittleH3">
+      <h3 class="mt-5">Tous les carnets</h3>
+      <span></span>
+    </div>
+    <div class="voirTousLesCarnets container mx-auto">
+      <a routerLink="carnets">Voir tous les carnets</a>
+    </div>
+    <p class="text-center">laissez-vous surprendre !</p>
   </section>
 
   <section id="carnetsPopulaires">

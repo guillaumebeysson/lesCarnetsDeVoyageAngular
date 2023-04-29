@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CarnetService } from '../services/carnet.service';
+import { Carnet } from '../interfaces/carnet';
 
-interface Carnet {
-  id: number;
-  name: string;
-  price: number;
-  picture: string;
-  
-}
+
 @Component({
   selector: 'app-carnets',
   templateUrl: './carnets.component.html',
@@ -14,12 +10,16 @@ interface Carnet {
 })
 export class CarnetsComponent implements OnInit {
   
-  carnets?: Carnet[];
+  carnet: Carnet = {}
+  carnets?: Carnet[] = [];
 
-  constructor() { }
+  constructor(private carnetService: CarnetService) { }
 
   ngOnInit(): void {
-
+    this.carnetService.getCarnets().subscribe(res => {
+      this.carnets = res;
+      console.log(res)
+    })
   }
 
 }

@@ -8,17 +8,20 @@ import { Carnet } from '../interfaces/carnet';
 export class CarnetService {
 
   private url: string = "http://localhost:8080/carnets"
+
   constructor(private http: HttpClient) { }
 
-  
 
   getCarnets() {
     return this.http.get<Carnet[]>(this.url);
   }
-  addCarnet(p: Carnet) {
-    return this.http.post<Carnet>(this.url, p);
+  getLastFourCarnets(){
+    return this.http.get<Carnet[]>(`${this.url}/lastFour`)
   }
-  removeCarnet(num: number) {
-    return this.http.delete<boolean>(`${this.url}/${num}`);
+  addCarnet(c: Carnet) {
+    return this.http.post<Carnet>(this.url, c);
+  }
+  removeCarnet(id: number) {
+    return this.http.delete<boolean>(`${this.url}/${id}`);
   }
 }

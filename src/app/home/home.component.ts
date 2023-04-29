@@ -4,6 +4,8 @@ import * as echarts from 'echarts';
 import worldmap from '../../assets/worldmap_small.json';
 import { HttpClient } from '@angular/common/http';
 import { CountryDetail } from './country-detail';
+import { CarnetService } from '../services/carnet.service';
+import { Carnet } from '../interfaces/carnet';
 
 @Component({
   selector: 'app-home',
@@ -11,16 +13,21 @@ import { CountryDetail } from './country-detail';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private http: HttpClient, ) {}
+  constructor(private http: HttpClient, private carnetService: CarnetService) {}
+
+  carnet: Carnet = {}
+  carnets?: Carnet[] = [];
 
   mapOption: EChartsOption = {};
-
   nameCountry: string = '';
-
   countryDetail: CountryDetail = {};
 
   ngOnInit(): void {
     this.mapFunction();
+    this.carnetService.getLastFourCarnets().subscribe(res => {
+      this.carnets = res;
+      console.log(res)
+    })
   }
 
 

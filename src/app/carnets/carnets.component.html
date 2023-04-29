@@ -1,7 +1,28 @@
-<h1>Carnets</h1>
+<div class="tittleH3 my-5">
+  <h3>carnets</h3>
+  <span></span>
+</div>
 
 <div id="carnets">
-  <div *ngFor="let c of carnets">
-    <p>test</p>
+  <div *ngFor="let carnet of carnets">
+    <div class="Card">
+      <div class="details">
+        <div class="card-img-opened">
+          <img src="{{carnet.picture1}}" class="card-img-top" alt="..." />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">
+            {{carnet.title}}
+          </h5>
+          <p class="pseudo text-secondary">
+            @Mon pseudo
+          </p>
+          <p id="description" class="card-text">
+            {{carnet.description}}
+          </p>
+          <a routerLink="../carnet" class="btn btn-primary rounded-pill d-flex justify-content-center">Découvrir</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

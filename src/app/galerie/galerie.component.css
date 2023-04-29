@@ -17,6 +17,8 @@ span {
     margin: 0 auto;
 }
 .container .blockImg{
+    width: 300px;
+    height: 300px;
     overflow: hidden;
     transition: all ease-in-out 0.3s;
     cursor: pointer;
@@ -24,7 +26,9 @@ span {
 }
 .container .blockImg img{
     transition: all ease-in-out 0.3s; 
-    
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
 }
 .container .blockImg:hover img{
     transform: scale(1.2);
