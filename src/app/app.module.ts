@@ -15,6 +15,7 @@ import { DestinationsComponent } from './destinations/destinations.component';
 import { MyAccountComponent } from './my-account/my-account.component';
 import { CreateCarnetComponent } from './create-carnet/create-carnet.component';
 import { AmeriqueComponent } from './amerique/amerique.component';
+import { CarnetsComponent } from './carnets/carnets.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { AmeriqueComponent } from './amerique/amerique.component';
     MyAccountComponent,
     CreateCarnetComponent,
     AmeriqueComponent,
+    CarnetsComponent,
   ],
   imports: [
     BrowserModule,

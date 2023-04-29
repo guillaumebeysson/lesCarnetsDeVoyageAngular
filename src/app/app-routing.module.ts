@@ -8,12 +8,14 @@ import { DestinationsComponent } from "./destinations/destinations.component";
 import { MyAccountComponent } from './my-account/my-account.component';
 import { CreateCarnetComponent } from './create-carnet/create-carnet.component';
 import { AmeriqueComponent } from './amerique/amerique.component';
+import { CarnetsComponent } from './carnets/carnets.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'galerie', component: GalerieComponent },
   { path: 'carnet', component: CarnetComponent },
+  { path: 'carnets', component: CarnetsComponent },
   { path: 'destinations', component: DestinationsComponent },
   { path: 'myAccount', component: MyAccountComponent },
   { path: 'createCarnet', component: CreateCarnetComponent },
