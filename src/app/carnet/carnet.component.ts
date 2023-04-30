@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Carnet } from '../interfaces/carnet';
+import { ActivatedRoute } from '@angular/router';
+import { CarnetService } from '../services/carnet.service';
 
 @Component({
   selector: 'app-carnet',
@@ -8,12 +11,20 @@ import { Component, OnInit } from '@angular/core';
 export class CarnetComponent implements OnInit {
   
   showModal!: boolean
+  carnet?: Carnet;
+  //carnets: Carnet[] = [];
 
 
-  constructor() {
+  constructor(private activatedRoute: ActivatedRoute,
+    private carnetService: CarnetService) {
   }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      const id = params['id'];
+      this.carnetService.getCarnetById(id).subscribe(c => this.carnet = c);
+      //this.carnetService.getCarnets(id).subscribe(cis => this.carnets = cis);
+    });
   }
   
   

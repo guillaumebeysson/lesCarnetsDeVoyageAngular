@@ -11,7 +11,9 @@ export class CarnetService {
 
   constructor(private http: HttpClient) { }
 
-
+  getCarnetById(id: number){
+    return this.http.get<Carnet>(`${this.url}/${id}`)
+  }
   getCarnets() {
     return this.http.get<Carnet[]>(this.url);
   }

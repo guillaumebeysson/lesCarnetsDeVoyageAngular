@@ -20,7 +20,8 @@
           <p id="description" class="card-text">
             {{carnet.description}}
           </p>
-          <a routerLink="../carnet" class="btn btn-primary rounded-pill d-flex justify-content-center">Découvrir</a>
+          <a [routerLink]="'../carnets/' + carnet?.id"
+            class="btn btn-primary rounded-pill d-flex justify-content-center">Découvrir</a>
         </div>
       </div>
     </div>

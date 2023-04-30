@@ -1,139 +1,100 @@
 <div class="container">
-    <div class="mt-5">
-        <h2 class="text-center h1 ">Titre du carnet</h2>
-        <span></span>
+  <div class="mt-5">
+    <h2 class="text-center h1 ">{{carnet?.title}}</h2>
+    <span></span>
+  </div>
+  <section class="barCarnet d-flex justify-content-between flex-wrap my-5">
+    <div class="element user">
+      <i class="fa-regular fa-user"></i> Guillaume
     </div>
-    <section class="barCarnet d-flex justify-content-between flex-wrap my-5">
-        <div class="element user">
-            <i class="fa-regular fa-user"></i> Guillaume
-        </div>
-        <div class="element dateCarnet" id="dateCarnet">
-            <i class="fa-regular fa-calendar-days"></i> 10/12/2022
-        </div>
-        <div class="element like">
-            <i class="fa-regular fa-heart"></i> like
-        </div>
-        <div class="element favoris">
-            <i class="fa-regular fa-star"></i> Ajouter aux favoris
-        </div>
-        <div class="element flag">
-            <i class="fa-regular fa-flag"></i> Pays
-        </div>
-        <div class="element btnAbo">
-            <button>S'abonner</button>
-        </div>
-    </section>
-    <section class="introduction d-flex flex-lg-row flex-column justify-content-center align-items-center">
-        <p class="p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est veniam eveniet doloremque reprehenderit. Expedita veniam qui nesciunt deserunt et praesentium officia nostrum id quod neque voluptatem laboriosam, iste, eligendi nihil. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia repellendus laborum placeat, id soluta incidunt. Fugiat excepturi voluptatum sint reiciendis in molestiae molestias impedit vel saepe officiis, distinctio, quia repudiandae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias aliquam nobis illum corporis, harum atque temporibus repellendus ratione commodi molestias incidunt delectus odit culpa consequatur enim non nihil ut optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, temporibus culpa recusandae animi, optio ipsam illum quas tempora sed porro tenetur itaque alias, ea cum sunt suscipit eius quisquam odio.</p>
-        <div>
-            <a (click) = "show()">
-                <img class="p-2" style="max-width:400px; max-height:400px" id="imageresource" src="https://picsum.photos/id/1016/400" >
-            </a>
-            <!-- Creates the bootstrap modal where the image will appear -->
-            <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-fullscreen ">
-                    <div class="modal-content bg-dark text-light">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">Image</h4>
-                            <button type="button" class="btn btn-default text-light" data-dismiss="modal" (click) = "hide()"><i class="fa-regular fa-circle-xmark h1"></i></button>
-                        </div>
-                        <div class="modal-body d-flex justify-content-center">
-                            <img src="https://picsum.photos/id/1016/400" id="imagepreview">
-                        </div>
-                    </div>
-                </div>
+    <div class="element dateCarnet" id="dateCarnet">
+      <i class="fa-regular fa-calendar-days"></i> 10/12/2022
+    </div>
+    <div class="element like">
+      <i class="fa-regular fa-heart"></i> like
+    </div>
+    <div class="element favoris">
+      <i class="fa-regular fa-star"></i> Ajouter aux favoris
+    </div>
+    <div class="element flag">
+      <i class="fa-regular fa-flag"></i> Pays
+    </div>
+    <div class="element btnAbo">
+      <button>S'abonner</button>
+    </div>
+  </section>
+  <section class="introduction d-flex flex-lg-row flex-column justify-content-center align-items-center">
+    <p class="p-2">{{carnet?.introduction}}</p>
+    <div>
+      <a (click)="show()">
+        <img class="p-2" style="max-width:400px; height:400px" id="imageresource" src="{{carnet?.picture1}}">
+      </a>
+      <!-- Creates the bootstrap modal where the image will appear -->
+      <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen ">
+          <div class="modal-content bg-dark text-light">
+            <div class="modal-header">
+              <h4 class="modal-title" id="myModalLabel">Image</h4>
+              <button type="button" class="btn btn-default text-light" data-dismiss="modal" (click)="hide()"><i
+                  class="fa-regular fa-circle-xmark h1"></i></button>
             </div>
-        </div>
-    </section>
-    <hr>
-    <section class="introduction d-flex flex-column">
-        <p class="p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est veniam eveniet doloremque reprehenderit. Expedita veniam qui nesciunt deserunt et praesentium officia nostrum id quod neque voluptatem laboriosam, iste, eligendi nihil. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia repellendus laborum placeat, id soluta incidunt. Fugiat excepturi voluptatum sint reiciendis in molestiae molestias impedit vel saepe officiis, distinctio, quia repudiandae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias aliquam nobis illum corporis, harum atque temporibus repellendus ratione commodi molestias incidunt delectus odit culpa consequatur enim non nihil ut optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, temporibus culpa recusandae animi, optio ipsam illum quas tempora sed porro tenetur itaque alias, ea cum sunt suscipit eius quisquam odio.</p>
-        <div class="d-flex justify-content-around flex-lg-row flex-column align-items-center">
-            <div>
-                <a (click) = "show()">
-                    <img class="p-2" style="max-width:400px; max-height:400px" id="imageresource" src="https://picsum.photos/id/1015/400" >
-                </a>
-                <!-- Creates the bootstrap modal where the image will appear -->
-                <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-fullscreen ">
-                        <div class="modal-content bg-dark text-light">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="myModalLabel">Image</h4>
-                                <button type="button" class="btn btn-default text-light" data-dismiss="modal" (click) = "hide()"><i class="fa-regular fa-circle-xmark h1"></i></button>
-                            </div>
-                            <div class="modal-body d-flex justify-content-center">
-                                <img src="https://picsum.photos/id/1015/400" id="imagepreview">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="modal-body d-flex justify-content-center">
+              <img src="{{carnet?.picture1}}" id="imagepreview">
             </div>
-            <div>
-                <a (click) = "show()">
-                    <img class="p-2" style="max-width:400px; max-height:400px" id="imageresource" src="https://picsum.photos/id/1018/400" >
-                </a>
-                <!-- Creates the bootstrap modal where the image will appear -->
-                <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-fullscreen ">
-                        <div class="modal-content bg-dark text-light">
-                            <div class="modal-header">
-                                <h4 class="modal-title" id="myModalLabel">Image</h4>
-                                <button type="button" class="btn btn-default text-light" data-dismiss="modal" (click) = "hide()"><i class="fa-regular fa-circle-xmark h1"></i></button>
-                            </div>
-                            <div class="modal-body d-flex justify-content-center">
-                                <img src="https://picsum.photos/id/1018/400" id="imagepreview">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
-    <hr>
-    <section class="introduction d-flex justify-content-around flex-lg-row flex-column align-items-center">
-        <div>
-            <a (click) = "show()">
-                <img class="p-2" style="max-width:400px; max-height:400px" id="imageresource" src="https://picsum.photos/id/1019/400" >
-            </a>
-            <!-- Creates the bootstrap modal where the image will appear -->
-            <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-fullscreen ">
-                    <div class="modal-content bg-dark text-light">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">Image</h4>
-                            <button type="button" class="btn btn-default text-light" data-dismiss="modal" (click) = "hide()"><i class="fa-regular fa-circle-xmark h1"></i></button>
-                        </div>
-                        <div class="modal-body d-flex justify-content-center">
-                            <img src="https://picsum.photos/id/1019/400" id="imagepreview">
-                        </div>
-                    </div>
-                </div>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section class="introduction d-flex flex-column">
+    <p class="p-2">{{carnet?.description}}</p>
+    <div class="d-flex justify-content-around flex-lg-row flex-column align-items-center">
+      <div>
+        <a (click)="show()">
+          <img class="p-2" style="max-width:400px; height:400px" id="imageresource" src="{{carnet?.picture2}}">
+        </a>
+        <!-- Creates the bootstrap modal where the image will appear -->
+        <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+          aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-fullscreen ">
+            <div class="modal-content bg-dark text-light">
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Image</h4>
+                <button type="button" class="btn btn-default text-light" data-dismiss="modal" (click)="hide()"><i
+                    class="fa-regular fa-circle-xmark h1"></i></button>
+              </div>
+              <div class="modal-body d-flex justify-content-center">
+                <img src="{{carnet?.picture2}}" id="imagepreview">
+              </div>
             </div>
+          </div>
         </div>
-        <p class="p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est veniam eveniet doloremque reprehenderit. Expedita veniam qui nesciunt deserunt et praesentium officia nostrum id quod neque voluptatem laboriosam, iste, eligendi nihil. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia repellendus laborum placeat, id soluta incidunt. Fugiat excepturi voluptatum sint reiciendis in molestiae molestias impedit vel saepe officiis, distinctio, quia repudiandae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias aliquam nobis illum corporis, harum atque temporibus repellendus ratione commodi molestias incidunt delectus odit culpa consequatur enim non nihil ut optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, temporibus culpa recusandae animi, optio ipsam illum quas tempora sed porro tenetur itaque alias, ea cum sunt suscipit eius quisquam odio.</p>
-    </section>
-    <hr>
-    <section class="introduction d-flex justify-content-around flex-lg-row flex-column align-items-center">
-        <p class="p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est veniam eveniet doloremque reprehenderit. Expedita veniam qui nesciunt deserunt et praesentium officia nostrum id quod neque voluptatem laboriosam, iste, eligendi nihil. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia repellendus laborum placeat, id soluta incidunt. Fugiat excepturi voluptatum sint reiciendis in molestiae molestias impedit vel saepe officiis, distinctio, quia repudiandae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias aliquam nobis illum corporis, harum atque temporibus repellendus ratione commodi molestias incidunt delectus odit culpa consequatur enim non nihil ut optio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, temporibus culpa recusandae animi, optio ipsam illum quas tempora sed porro tenetur itaque alias, ea cum sunt suscipit eius quisquam odio.</p>
-        <div>
-            <a (click) = "show()">
-                <img class="p-2" style="max-width:400px; max-height:400px" src="https://picsum.photos/id/1021/400" >
-            </a>
-            <!-- Creates the bootstrap modal where the image will appear -->
-            <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-fullscreen ">
-                    <div class="modal-content bg-dark text-light">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">Image</h4>
-                            <button type="button" class="btn btn-default text-light" data-dismiss="modal" (click) = "hide()"><i class="fa-regular fa-circle-xmark h2"></i></button>
-                        </div>
-                        <div class="modal-body d-flex justify-content-center">
-                            <img src="https://picsum.photos/id/1021/400" >
-                        </div>
-                    </div>
-                </div>
+      </div>
+      <div>
+        <a (click)="show()">
+          <img class="p-2" style="max-width:400px; height:400px" id="imageresource" src="{{carnet?.picture3}}">
+        </a>
+        <!-- Creates the bootstrap modal where the image will appear -->
+        <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
+          aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-fullscreen ">
+            <div class="modal-content bg-dark text-light">
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Image</h4>
+                <button type="button" class="btn btn-default text-light" data-dismiss="modal" (click)="hide()"><i
+                    class="fa-regular fa-circle-xmark h1"></i></button>
+              </div>
+              <div class="modal-body d-flex justify-content-center">
+                <img src="{{carnet?.picture3}}" id="imagepreview">
+              </div>
             </div>
+          </div>
         </div>
-    </section>
-    <hr>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <hr>
 </div>

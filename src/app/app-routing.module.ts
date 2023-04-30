@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'galerie', component: GalerieComponent },
-  { path: 'carnet', component: CarnetComponent },
+  { path: 'carnets/:id', component: CarnetComponent },
   { path: 'carnets', component: CarnetsComponent },
   { path: 'destinations', component: DestinationsComponent },
   { path: 'myAccount', component: MyAccountComponent },
