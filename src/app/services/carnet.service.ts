@@ -11,6 +11,12 @@ export class CarnetService {
 
   constructor(private http: HttpClient) { }
 
+  getCarnetsReverseOrder(){
+    return this.http.get<Carnet[]>(`${this.url}/reverseOrder`);
+  }
+  getCarnetsByCountry(country: string){
+    return this.http.get<Carnet[]>(`${this.url}/country/${country}`)
+  }
   getCarnetById(id: number){
     return this.http.get<Carnet>(`${this.url}/${id}`)
   }

@@ -20,6 +20,7 @@ import { EuropeComponent } from './europe/europe.component';
 import { AfriqueComponent } from './afrique/afrique.component';
 import { AsieComponent } from './asie/asie.component';
 import { OceanieComponent } from './oceanie/oceanie.component';
+import { CountryComponent } from './country/country.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { OceanieComponent } from './oceanie/oceanie.component';
     AfriqueComponent,
     AsieComponent,
     OceanieComponent,
+    CountryComponent,
   ],
   imports: [
     BrowserModule,

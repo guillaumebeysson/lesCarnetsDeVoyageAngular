@@ -39,7 +39,8 @@
             <p id="description" class="card-text">
               {{carnet.description}}
             </p>
-            <a routerLink="carnet" class="btn btn-primary rounded-pill d-flex justify-content-center">Découvrir</a>
+            <a [routerLink]="'../carnets/' + carnet?.id"
+              class="btn btn-primary rounded-pill d-flex justify-content-center discover">Découvrir</a>
           </div>
         </div>
       </div>
@@ -54,7 +55,7 @@
     <div class="voirTousLesCarnets container mx-auto">
       <a routerLink="carnets">Voir tous les carnets</a>
     </div>
-    <p class="text-center">laissez-vous surprendre !</p>
+    <p class="text-center">Accéder à tous les carnets quelque soit leur pays !</p>
   </section>
 
   <section id="carnetsPopulaires">
@@ -165,7 +166,7 @@
       <span></span>
     </div>
     <div class="btnDecouvreUnCarnet container mx-auto">
-      <a routerLink="carnets/2">Découvrez un carnet</a>
+      <a routerLink="carnets/randomCarnet">Découvrez un carnet</a>
     </div>
     <p class="text-center">laissez-vous surprendre !</p>
   </section>
@@ -195,8 +196,9 @@
           <p><strong>Population: </strong> {{ countryDetail.population }} habitants</p>
           <a href="{{ countryDetail.googleMap }}" target="_blank" class="link-info">Lien Google Map</a>
         </div>
-        <a routerLink="carnet" class="btn btn-primary rounded-pill d-flex justify-content-center"
-          style="margin: 0 15px 15px 15px">Accédez aux carnets de ce pays</a>
+        <a [routerLink]="'/carnets/country/' + countryDetail.name"
+          class="btn btn-primary rounded-pill d-flex justify-content-center" style="margin: 0 15px 15px 15px">Accédez
+          aux carnets de ce pays</a>
       </div>
     </div>
   </section>

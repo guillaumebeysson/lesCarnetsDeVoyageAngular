@@ -9,13 +9,12 @@ import { Carnet } from '../interfaces/carnet';
 })
 export class GalerieComponent implements OnInit {
 
-  carnet: Carnet = {}
   carnets?: Carnet[] = [];
 
   constructor(private carnetService: CarnetService) { }
 
   ngOnInit(): void {
-    this.carnetService.getCarnets().subscribe(res => {
+    this.carnetService.getCarnetsReverseOrder().subscribe(res => {
       this.carnets = res;
       console.log(res)
     })

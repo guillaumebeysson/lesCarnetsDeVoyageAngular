@@ -7,4 +7,10 @@ export interface Carnet {
     picture2?: string;
     picture3?: string;
     country?: string;
+    durationTrip?: string;
+    departurePeriod?: string;
+    organisation?: string;
+    situation?: string;
+    transport?: string;
+    date?: string;
 }

@@ -63,6 +63,10 @@ span {
     color: gold;
     cursor: pointer;
 }
+.flag a{
+    text-decoration: none;
+    color: unset;
+}
 .fa-flag{
     transition: all 0.5s ease-in-out;
 }

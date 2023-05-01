@@ -10,9 +10,9 @@ import { CarnetService } from '../services/carnet.service';
 })
 export class CarnetComponent implements OnInit {
   
-  showModal!: boolean
+  showModal!: boolean;
+  imageUrl?: string;
   carnet?: Carnet;
-  //carnets: Carnet[] = [];
 
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -23,18 +23,15 @@ export class CarnetComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       const id = params['id'];
       this.carnetService.getCarnetById(id).subscribe(c => this.carnet = c);
-      //this.carnetService.getCarnets(id).subscribe(cis => this.carnets = cis);
     });
   }
   
-  
-  show()
-    {
+  show(imageUrl: string){
+      this.imageUrl = imageUrl;
       this.showModal = true; // Show-Hide Modal Check
       console.log(this.showModal);
     }
-    hide()
-    {
+    hide(){
       this.showModal = false; //Bootstrap Modal Close event
       console.log(this.showModal);
     }

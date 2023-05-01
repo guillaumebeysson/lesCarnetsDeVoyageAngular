@@ -1,26 +1,26 @@
-
-
 <section id="oceaniaFullScreen">
-    <h1 class="animate right">Océanie</h1>
-  </section>
-  
-  
-  <div class="tittleH3 my-5">
-    <h3 class="mt-5">Liste des pays d'océanie</h3>
-    <span></span>
-  </div>
-  
-  <section id="countriesListSection">
-    <div *ngFor="let countriesOceania of countriesData" class="cardCountries">
-      <img [src]="countriesOceania.flags.png" class="cardCountryImg" alt="Drapeau de {{ countriesOceania.translations.fra.common }}" />
-      <div class="tittleCard my-3">{{ countriesOceania.translations.fra.common }}</div>
-      <div class="cardCountryInfo">
-        <!-- <p>code: {{ countriesOceania.cca2 }}</p> -->
-        <p><i class="fa-solid fa-landmark-flag"></i> : {{ countriesOceania.capital[0] }}</p>
-        <p><i class="fa-solid fa-chart-area"></i> : {{ countriesOceania.area }} km²</p>
-        <p><i class="fa-brands fa-google"></i> <a [href]="countriesOceania.maps.googleMaps" target="_blank"> : {{ countriesOceania.translations.fra.common }}</a></p>
-        <button class="my-2">Voir les carnets</button>
-      </div>
-    </div>
-  </section>
+  <h1 class="animate right">Océanie</h1>
+</section>
 
+
+<div class="tittleH3 my-5">
+  <h3 class="mt-5">Liste des pays d'océanie</h3>
+  <span></span>
+</div>
+
+<section id="countriesListSection">
+  <div *ngFor="let countriesOceania of countriesData" class="cardCountries">
+    <img [src]="countriesOceania.flags.png" class="cardCountryImg"
+      alt="Drapeau de {{ countriesOceania.translations.fra.common }}" />
+    <div class="tittleCard my-3">{{ countriesOceania.translations.fra.common }}</div>
+    <div class="cardCountryInfo">
+      <!-- <p>code: {{ countriesOceania.cca2 }}</p> -->
+      <p><i class="fa-solid fa-landmark-flag"></i> : {{ countriesOceania.capital[0] }}</p>
+      <p><i class="fa-solid fa-chart-area"></i> : {{ countriesOceania.area }} km²</p>
+      <p><i class="fa-brands fa-google"></i> <a [href]="countriesOceania.maps.googleMaps" target="_blank"> :
+          {{ countriesOceania.translations.fra.common }}</a></p>
+      <button class="my-2" [routerLink]="'../../carnets/country/' + countriesOceania.translations.fra.common">Voir les
+        carnets</button>
+    </div>
+  </div>
+</section>

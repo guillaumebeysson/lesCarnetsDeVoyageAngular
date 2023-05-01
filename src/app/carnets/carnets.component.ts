@@ -10,7 +10,7 @@ import { Carnet } from '../interfaces/carnet';
 })
 export class CarnetsComponent implements OnInit {
   
-  
+
   carnets?: Carnet[] = [];
 
   constructor(private carnetService: CarnetService) { }

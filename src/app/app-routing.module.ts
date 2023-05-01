@@ -13,12 +13,14 @@ import { AfriqueComponent } from './afrique/afrique.component';
 import { AsieComponent } from './asie/asie.component';
 import { OceanieComponent } from './oceanie/oceanie.component';
 import { CarnetsComponent } from './carnets/carnets.component';
+import { CountryComponent } from './country/country.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'galerie', component: GalerieComponent },
   { path: 'carnets/:id', component: CarnetComponent },
+  { path: 'carnets/randomCarnet', component: CarnetComponent },
   { path: 'carnets', component: CarnetsComponent },
   { path: 'destinations', component: DestinationsComponent },
   { path: 'myAccount', component: MyAccountComponent },
@@ -28,6 +30,7 @@ const routes: Routes = [
   { path: 'destinations/afrique', component: AfriqueComponent },
   { path: 'destinations/asie', component: AsieComponent },
   { path: 'destinations/oceanie', component: OceanieComponent },
+  { path: 'carnets/country/:country', component: CountryComponent },
 ];
 
 @NgModule({

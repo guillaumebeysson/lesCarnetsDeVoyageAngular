@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CarnetService } from '../services/carnet.service';
+import { Carnet } from '../interfaces/carnet';
 
 interface CountriesAmerica {
   translations: { fra: { common: string } };
