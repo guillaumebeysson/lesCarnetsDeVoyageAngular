@@ -8,5 +8,4 @@ export interface CountryDetail {
   area?: string;
   population?: string;
   googleMap?: string;
-
 }

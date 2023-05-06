@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Carnet } from '../interfaces/carnet';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ export class CarnetService {
   addCarnet(c: Carnet) {
     return this.http.post<Carnet>(this.url, c);
   }
-  removeCarnet(id?: number) {
+  removeCarnet(id?: number): Observable<boolean> {
     return this.http.delete<boolean>(`${this.url}/delete/${id}`);
   }
 }

@@ -128,7 +128,7 @@ span {
 }
 
 .modifyOrDelete .modify i {
-  transition: all 0.5s;
+  transition: all ease-in-out 0.5s;
 }
 
 .modifyOrDelete .modify:hover i {
@@ -142,7 +142,7 @@ span {
 }
 
 .modifyOrDelete .delete i {
-  transition: all 0.5s;
+  transition: all ease-in-out 0.5s;
 }
 
 .modifyOrDelete .delete:hover i {

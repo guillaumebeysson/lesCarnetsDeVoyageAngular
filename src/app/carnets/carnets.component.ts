@@ -23,18 +23,21 @@ export class CarnetsComponent implements OnInit {
     })
   }
 
- 
   onDelete(id?: number): void {
-    this.carnetService.removeCarnet(id).subscribe(res => {
-      if (res) {
-        // actualiser la liste des carnets après suppression
-        this.router.navigate(['/carnets']);
-      } else {
-        console.log("Erreur lors de la suppression du carnet");
-      }
+    if (id === undefined) {
+      console.error("L'id est indéfini");
+      return;
+    }
+    this.carnetService.removeCarnet(id).subscribe({
+      next: () => 
+        this.carnetService.getCarnets().subscribe(carnets => {
+          this.carnets = carnets;
+          console.log("Supression effectuée")
+        }), 
+      error: () =>
+        console.log("Erreur lors de la suppression du carnet")
     });
   }
-
 
 
 }

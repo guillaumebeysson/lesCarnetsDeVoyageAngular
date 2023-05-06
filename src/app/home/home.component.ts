@@ -26,7 +26,6 @@ export class HomeComponent implements OnInit {
     this.mapFunction();
     this.carnetService.getLastFourCarnets().subscribe(res => {
       this.carnets = res;
-      console.log(res)
     })
   }
 
@@ -62,10 +61,8 @@ export class HomeComponent implements OnInit {
   }
 
   mapFunction(): void {
-    echarts.registerMap('USA', worldmap, {});
-
+    echarts.registerMap('world', worldmap, {});
     // customisation de la map
-
     this.mapOption = {
       aria: {
         enabled: true,
@@ -92,10 +89,9 @@ export class HomeComponent implements OnInit {
 
       series: [
         {
-          name: 'USA PopEstimates',
           type: 'map',
           roam: true,
-          map: 'USA',
+          map: 'world',
 
           select: {
             itemStyle: {
