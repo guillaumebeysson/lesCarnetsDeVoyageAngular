@@ -29,7 +29,7 @@ export class CarnetService {
   addCarnet(c: Carnet) {
     return this.http.post<Carnet>(this.url, c);
   }
-  removeCarnet(id: number) {
-    return this.http.delete<boolean>(`${this.url}/${id}`);
+  removeCarnet(id?: number) {
+    return this.http.delete<boolean>(`${this.url}/delete/${id}`);
   }
 }
