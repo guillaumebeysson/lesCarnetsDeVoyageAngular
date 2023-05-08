@@ -14,10 +14,12 @@ import { AsieComponent } from './asie/asie.component';
 import { OceanieComponent } from './oceanie/oceanie.component';
 import { CarnetsComponent } from './carnets/carnets.component';
 import { CountryComponent } from './country/country.component';
+import { AuthComponent } from './auth/auth.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signin', component: SigninComponent },
+  { path: 'auth', component: AuthComponent },
   { path: 'galerie', component: GalerieComponent },
   { path: 'carnets/:id', component: CarnetComponent },
   { path: 'carnets/randomCarnet', component: CarnetComponent },

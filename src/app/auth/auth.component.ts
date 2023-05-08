@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 import { CommunicateService } from '../services/communicate.service';
 
 @Component({
-  selector: 'app-signin',
-  templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']
+  selector: 'app-auth',
+  templateUrl: './auth.component.html',
+  styleUrls: ['./auth.component.css']
 })
-export class SigninComponent implements OnInit {
+export class AuthComponent implements OnInit {
 
   user: User = {
     id:0,
@@ -25,7 +25,7 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  inscription(){
+  connexion(){
     console.log(this.user);
     this.userService.checkUser(this.user).subscribe({
       next: result => {

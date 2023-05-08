@@ -21,6 +21,7 @@ import { AfriqueComponent } from './afrique/afrique.component';
 import { AsieComponent } from './asie/asie.component';
 import { OceanieComponent } from './oceanie/oceanie.component';
 import { CountryComponent } from './country/country.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { CountryComponent } from './country/country.component';
     AsieComponent,
     OceanieComponent,
     CountryComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,

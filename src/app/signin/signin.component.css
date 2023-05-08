@@ -27,19 +27,12 @@ article {
   font-family: "Montserrat", sans-serif;
   position: relative;
 }
-#separator{
-  width: 0px;
-  background-color: #f09545;
-}
-h1{
+
+h1 {
   color: #f09545;
   margin: 30px 0;
 }
-#allForms{
- margin-top: 30px;
- display: flex;
- justify-content: space-evenly;
-}
+
 button {
   width: 100px;
   height: 30px;
@@ -49,23 +42,28 @@ button {
   border: solid 1px white;
   border-radius: 5px;
 }
+
 button:hover {
   cursor: pointer;
 }
+
 span {
   margin: 20px 0 10px 0;
   font-size: large;
 }
+
 a {
   margin: 5px 0;
   color: #f09545;
   transition: all 0.2s;
   text-transform: lowercase;
 }
+
 a:hover {
   color: white;
   cursor: pointer;
 }
+
 .button-inscrip {
   display: flex;
   flex-direction: column;
@@ -78,6 +76,7 @@ a:hover {
   text-decoration: none;
   align-items: center;
 }
+
 button {
   height: 50px;
   width: 200px;
@@ -88,11 +87,13 @@ embed {
   position: relative;
   bottom: 0px;
 }
+
 p {
   text-decoration: #f09545 underline;
   margin-bottom: 5px;
   font-size: x-large;
 }
+
 input {
   margin: 0 auto;
   margin-bottom: 20px;
@@ -102,7 +103,8 @@ input {
   border-radius: 5px;
   color: black;
 }
-.form-connect{
+
+.form-connect {
   color: #fff;
   text-align: center;
   margin: 1em;
@@ -110,6 +112,7 @@ input {
   flex-direction: column;
   align-items: center;
 }
+
 .form-inscrip {
   color: #fff;
   text-align: center;
@@ -118,6 +121,7 @@ input {
   flex-direction: column;
   align-items: center;
 }
+
 #stars {
   width: 1px;
   height: 1px;
@@ -301,7 +305,7 @@ input {
     1647px 1298px #fff, 1233px 1387px #fff, 698px 1036px #fff, 659px 1860px #fff,
     388px 1412px #fff, 1212px 458px #fff, 755px 1468px #fff, 696px 1654px #fff,
     1144px 60px #fff;
-} 
+}
 
 #stars:after {
   content: "";
@@ -679,13 +683,14 @@ input {
   from {
     transform: translateY(0px);
   }
+
   to {
     transform: translateY(-2000px);
   }
 }
 
 @media (max-width: 700px) {
-  #allForms{
+  #allForms {
     flex-direction: column;
   }
 }
