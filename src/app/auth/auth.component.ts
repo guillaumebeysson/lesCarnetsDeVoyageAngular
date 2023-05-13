@@ -36,7 +36,6 @@ export class AuthComponent implements OnInit {
       },
       error: (e) => {this.erreur = "identifiants incorrects"+ e
       console.log(this.user)}
-      
     })
   }
 
