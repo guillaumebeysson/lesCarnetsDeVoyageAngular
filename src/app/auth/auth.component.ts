@@ -13,7 +13,7 @@ export class AuthComponent implements OnInit {
 
   user: User = {
     id:0,
-    email: "",
+    grantType: "password",
     username: "",
     password: "",
     role: "CLIENT"
@@ -29,13 +29,15 @@ export class AuthComponent implements OnInit {
     console.log(this.user);
     this.userService.checkUser(this.user).subscribe({
       next: result => {
-        localStorage.setItem("user", JSON.stringify(result))
+        localStorage.setItem("tokens", JSON.stringify(result))
         console.log(this.user);
         this.cs.sendValue(this.user.username!)
         this.router.navigateByUrl("")
       },
-      error: (e) => {this.erreur = "identifiants incorrects"+ e
-      console.log(this.user)}
+      error: (e) => {this.erreur = "identifiants incorrects"
+      // + JSON.stringify(e)
+      // console.log(this.user)
+    }
     })
   }
 

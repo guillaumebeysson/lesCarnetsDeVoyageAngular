@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+// subject pour faire passer des informations dans différents composants
 export class CommunicateService {
 
   private subject: Subject<string|null> = new Subject<string|null>();

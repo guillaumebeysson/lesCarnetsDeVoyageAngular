@@ -15,24 +15,25 @@ import { OceanieComponent } from './oceanie/oceanie.component';
 import { CarnetsComponent } from './carnets/carnets.component';
 import { CountryComponent } from './country/country.component';
 import { AuthComponent } from './auth/auth.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'auth', component: AuthComponent },
-  { path: 'galerie', component: GalerieComponent },
-  { path: 'carnets/:id', component: CarnetComponent },
-  { path: 'carnets/randomCarnet', component: CarnetComponent },
-  { path: 'carnets', component: CarnetsComponent },
-  { path: 'destinations', component: DestinationsComponent },
-  { path: 'myAccount', component: MyAccountComponent },
-  { path: 'createCarnet', component: CreateCarnetComponent },
-  { path: 'destinations/amerique', component: AmeriqueComponent },
-  { path: 'destinations/europe', component: EuropeComponent },
-  { path: 'destinations/afrique', component: AfriqueComponent },
-  { path: 'destinations/asie', component: AsieComponent },
-  { path: 'destinations/oceanie', component: OceanieComponent },
-  { path: 'carnets/country/:country', component: CountryComponent },
+  { path: 'carnets/:id', component: CarnetComponent, canActivate: [AuthGuard] },
+  { path: 'galerie', component: GalerieComponent, canActivate: [AuthGuard] },
+  { path: 'carnets/randomCarnet', component: CarnetComponent, canActivate: [AuthGuard] },
+  { path: 'carnets', component: CarnetsComponent, canActivate: [AuthGuard] },
+  { path: 'destinations', component: DestinationsComponent, canActivate: [AuthGuard] },
+  { path: 'myAccount', component: MyAccountComponent, canActivate: [AuthGuard] },
+  { path: 'createCarnet', component: CreateCarnetComponent, canActivate: [AuthGuard] },
+  { path: 'destinations/amerique', component: AmeriqueComponent, canActivate: [AuthGuard] },
+  { path: 'destinations/europe', component: EuropeComponent, canActivate: [AuthGuard] },
+  { path: 'destinations/afrique', component: AfriqueComponent, canActivate: [AuthGuard] },
+  { path: 'destinations/asie', component: AsieComponent, canActivate: [AuthGuard] },
+  { path: 'destinations/oceanie', component: OceanieComponent, canActivate: [AuthGuard] },
+  { path: 'carnets/country/:country', component: CountryComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

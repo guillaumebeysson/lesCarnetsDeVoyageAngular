@@ -28,8 +28,11 @@
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
         <button class="mx-2" id="btn-my-account" routerLink="myAccount">Mon compte</button>
-        <button class="btn btn-outline-primary me-2 mx-2" type="button" routerLink="/auth">
+        <button *ngIf="!nom" class="btn btn-outline-primary me-2 mx-2" type="button" routerLink="/auth">
           <i class="fa-solid fa-user"></i>
+        </button>
+        <button id="signOutBtn" *ngIf="nom" class="btn btn-outline-primary me-2 mx-2" (click)="signOut()" type="button" routerLink="/" title="Déconnexion">
+          <i class="fa-solid fa-xmark danger"></i>
         </button>
       </form>
     </div>

@@ -27,15 +27,13 @@ export class SigninComponent implements OnInit {
 
   inscription(){
     console.log(this.user);
-    this.userService.checkUser(this.user).subscribe({
+    this.userService.addUser(this.user).subscribe({
       next: result => {
-        localStorage.setItem("user", JSON.stringify(result))
-        console.log(this.user);
-        this.cs.sendValue(this.user.username!)
-        this.router.navigateByUrl("")
+        this.router.navigateByUrl("/auth")
       },
-      error: (e) => {this.erreur = "identifiants incorrects"+ e
-      console.log(this.user)}
+      error: (e) => {this.erreur = "Le nom d'utilisateur ou l'email est déjà pris"
+      // console.log(this.user)
+      }   
     })
   }
 
