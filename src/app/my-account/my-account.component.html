@@ -1,9 +1,10 @@
 <div class="container">
-  <h1 class="text-center my-5">Profil de Guillaume</h1>
+  <h1 class="text-center my-5">Profil de {{nom}}</h1>
+  <button routerLink="/createCarnet">Poste un carnet</button>
   <div id="personalInformations">
     <h2 class="my-3">Mes informations personnelles:</h2>
     <ul>
-      <li>Name:</li>
+      <li>Name: {{nom}}</li>
       <li>Email:</li>
       <li>Nationalité:
         <select>
