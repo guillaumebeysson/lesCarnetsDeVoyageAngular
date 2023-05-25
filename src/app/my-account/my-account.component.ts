@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommunicateService } from '../services/communicate.service';
+import { UserService } from '../services/user.service';
+import { User } from '../interfaces/user';
 
 @Component({
   selector: 'app-my-account',
@@ -11,9 +13,12 @@ import { CommunicateService } from '../services/communicate.service';
 export class MyAccountComponent implements OnInit {
   paysListe: any[] = [];
   nom: string | null = null
+  id: number | undefined = undefined
+  user: User = {};
+  
   title = 'LesCarnetsDeVoyage';
 
-  constructor(private http: HttpClient, private router: Router, private cs: CommunicateService) { }
+  constructor(private http: HttpClient, private router: Router, private cs: CommunicateService, private activatedRoute: ActivatedRoute, private userService: UserService) { }
 
   ngOnInit() {
     //récupère la liste des pays via l'api
@@ -22,8 +27,16 @@ export class MyAccountComponent implements OnInit {
       this.paysListe = paysListe.sort((a, b) => a.translations.fra.common.localeCompare(b.translations.fra.common));
       console.log(paysListe);
     });
+
     this.cs.getValue().subscribe(nom => this.nom = nom)
+    this.cs.getValueId().subscribe(id => this.id = id)
     console.log("nom....." + this.nom)
+    console.log("id....." + this.id)
+
+    this.activatedRoute.params.subscribe(params => {
+      const id = params['id'];
+      this.userService.getUserById(id).subscribe(u => this.user = u);
+    });
   }
 
 }

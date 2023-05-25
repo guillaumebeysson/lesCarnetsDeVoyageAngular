@@ -32,7 +32,7 @@ export class SigninComponent implements OnInit {
         this.router.navigateByUrl("/auth")
       },
       error: (e) => {this.erreur = "Le nom d'utilisateur ou l'email est déjà pris"
-      // console.log(this.user)
+      console.log(this.user)
       }   
     })
   }

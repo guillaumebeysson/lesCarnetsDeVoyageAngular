@@ -8,12 +8,20 @@ import { Subject } from 'rxjs';
 export class CommunicateService {
 
   private subject: Subject<string|null> = new Subject<string|null>();
+  private subjectId: Subject<number|undefined> = new Subject<number|undefined>();
+  
   constructor() { }
+
+  sendValueId(id: number | undefined){
+    this.subjectId.next(id)
+  }
+  getValueId(){
+    return this.subjectId
+  }
 
   sendValue(value: string|null){
     this.subject.next(value)
   }
-
   getValue(){
     return this.subject
   }

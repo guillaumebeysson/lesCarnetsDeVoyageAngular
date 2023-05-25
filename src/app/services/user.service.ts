@@ -10,10 +10,15 @@ import jwt_decode from "jwt-decode";
 export class UserService {
   private url: string = "http://localhost:8080/token"
   private urlUser: string = "http://localhost:8080/users"
+
   constructor(private http: HttpClient) { }
 
   checkUser(user: User) {
     return this.http.post<Token>(this.url, user);
+  }
+
+  getUserById(id: number){
+    return this.http.get<User>(`${this.urlUser}/${id}`)
   }
 
   addUser(user: User){

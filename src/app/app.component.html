@@ -27,11 +27,12 @@
         <button class="btn btn-outline-primary rounded-circle" type="submit">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-        <button *ngIf="nom" class="mx-2" id="btn-my-account" routerLink="myAccount">{{nom}}</button>
+        <button *ngIf="nom" class="mx-2" id="btn-my-account" [routerLink]="'../myAccount/' + nom">{{nom}}</button>
         <button *ngIf="!nom" class="btn btn-outline-primary me-2 mx-2" type="button" routerLink="/auth">
           <i class="fa-solid fa-user"></i>
         </button>
-        <button id="signOutBtn" *ngIf="nom" class="btn btn-outline-primary me-2 mx-2" (click)="signOut()" type="button" routerLink="/" title="Déconnexion">
+        <button id="signOutBtn" *ngIf="nom" class="btn btn-outline-primary me-2 mx-2" (click)="signOut()" type="button"
+          routerLink="/" title="Déconnexion">
           <i class="fa-solid fa-xmark danger"></i>
         </button>
       </form>
@@ -90,7 +91,8 @@
             <i class="fas fa-gem me-3"></i>Les Carnets De Voyage
           </h6>
           <p>
-            Premier site d'idée voyage partout dans le monde ! Postez vos carnets et partagez-les avec tous les utilisateurs !
+            Premier site d'idée voyage partout dans le monde ! Postez vos carnets et partagez-les avec tous les
+            utilisateurs !
           </p>
         </div>
         <!-- Grid column -->

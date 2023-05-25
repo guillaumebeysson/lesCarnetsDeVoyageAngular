@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'carnets/randomCarnet', component: CarnetComponent, canActivate: [AuthGuard] },
   { path: 'carnets', component: CarnetsComponent, canActivate: [AuthGuard] },
   { path: 'destinations', component: DestinationsComponent, canActivate: [AuthGuard] },
-  { path: 'myAccount', component: MyAccountComponent, canActivate: [AuthGuard] },
+  { path: 'myAccount/:nom', component: MyAccountComponent, canActivate: [AuthGuard] },
   { path: 'createCarnet', component: CreateCarnetComponent, canActivate: [AuthGuard] },
   { path: 'destinations/amerique', component: AmeriqueComponent, canActivate: [AuthGuard] },
   { path: 'destinations/europe', component: EuropeComponent, canActivate: [AuthGuard] },
