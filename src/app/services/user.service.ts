@@ -38,4 +38,12 @@ export class UserService {
     const user: User = { grantType: "refreshToken" , refreshToken: token}
     return this.http.post<Token>(this.url, user);
   }
+
+  isAuthenticated(): boolean {
+    const token = sessionStorage.getItem('tokens');
+    if (token) {
+      return !this.isExpiredToken(token);
+    }
+    return false;
+  }
 }

@@ -14,11 +14,11 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(private userService: UserService,) { }
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
       if (request.url !== 'http://localhost:8080/token') {
-        let tokens = JSON.parse(localStorage.getItem('tokens') ?? "")
+        let tokens = JSON.parse(sessionStorage.getItem('tokens') ?? "")
         if (this.userService.isExpiredToken(tokens.accessToken)) {
           this.userService.generateTokensFromRefreshToken(tokens.refreshToken).subscribe(res => {
             tokens = res;
-            localStorage.setItem('tokens', JSON.stringify(res))
+            sessionStorage.setItem('tokens', JSON.stringify(res))
           })
         }
         request = request.clone({

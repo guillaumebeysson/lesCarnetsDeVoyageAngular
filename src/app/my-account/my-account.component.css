@@ -1,8 +1,32 @@
-#personalInformations ul{
+#personalInformations ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-#personalInformations li{
+
+#personalInformations li {
     list-style: none;
+}
+
+#btn-post-carnet {
+    text-align: center;
+}
+
+#btn-post-carnet button {
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: solid 1px #FDAC0F;
+    color: #ffffff;
+    border-radius: 10px;
+    background-color: #FDAC0F;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#btn-post-carnet button:hover {
+    color: #FDAC0F;
+    background-color: #ffffff;
+    padding-left: 30px;
+    padding-right: 30px;
 }

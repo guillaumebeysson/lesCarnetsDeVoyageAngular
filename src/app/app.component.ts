@@ -19,14 +19,22 @@ export class AppComponent {
   user: User = {}
   title = 'LesCarnetsDeVoyage';
 
-  constructor(private router: Router, private cs: CommunicateService, private userService: UserService) { }
+  constructor(private router: Router, private cs: CommunicateService, public userService: UserService) { }
 
   ngOnInit(): void{
     
-    this.cs.getValueId().subscribe(id => this.id = id)
+    // this.cs.getValueId().subscribe(id => this.id = id)
     this.cs.getValue().subscribe(nom => this.nom = nom)
-    console.log("nom....." + this.nom)
+    // console.log("nom....." + this.nom)
+    const token = sessionStorage.getItem('tokens');
+    if (token) {
+      this.nom = this.userService.getUsernameFromToken(token);
+      console.log("nom in token....." + this.nom)
+    }
   }
+
+
+  
 
   // displayAccount(){
   //   this.userService.getUserById(this.id!).subscribe(res => {
@@ -38,8 +46,9 @@ export class AppComponent {
   // }
 
   signOut() {
-    localStorage.removeItem('tokens')
+    sessionStorage.removeItem('tokens')
     this.cs.sendValue(null)
     this.router.navigateByUrl('/')
+    location.reload()
   }
 }

@@ -29,7 +29,7 @@ export class AuthComponent implements OnInit {
     console.log(this.user);
     this.userService.checkUser(this.user).subscribe({
       next: result => {
-        localStorage.setItem("tokens", JSON.stringify(result))
+        sessionStorage.setItem("tokens", JSON.stringify(result))
         console.log(this.user);
         this.cs.sendValue(this.user.username!)
         this.router.navigateByUrl("")

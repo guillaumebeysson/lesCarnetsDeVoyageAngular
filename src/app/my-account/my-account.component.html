@@ -1,7 +1,8 @@
 <div class="container">
   <h1 class="text-center my-5">Profil de {{nom}}</h1>
-  <h1 class="text-center my-5">Profil de {{user.username}} </h1>
-  <button routerLink="/createCarnet">Poste un carnet</button>
+  <div id="btn-post-carnet">
+    <button routerLink="/createCarnet">Poste un carnet</button>
+  </div>
   <div id="personalInformations">
     <h2 class="my-3">Mes informations personnelles:</h2>
     <ul>
@@ -17,5 +18,8 @@
   </div>
   <div id="carnets">
     <h2 class="my-3">Mes carnets:</h2>
+  </div>
+  <div id="carnets">
+    <h2 class="my-3">Mes carnets favoris:</h2>
   </div>
 </div>

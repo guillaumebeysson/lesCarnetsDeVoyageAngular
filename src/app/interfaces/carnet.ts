@@ -12,5 +12,5 @@ export interface Carnet {
     organisation?: string;
     situation?: string;
     transport?: string;
-    date?: string;
+    date?: Date;
 }

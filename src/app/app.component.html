@@ -27,11 +27,11 @@
         <button class="btn btn-outline-primary rounded-circle" type="submit">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-        <button *ngIf="nom" class="mx-2" id="btn-my-account" [routerLink]="'../myAccount/' + nom">{{nom}}</button>
-        <button *ngIf="!nom" class="btn btn-outline-primary me-2 mx-2" type="button" routerLink="/auth">
+        <button *ngIf="userService.isAuthenticated()" class="mx-2" id="btn-my-account" [routerLink]="'../myAccount/' + nom">{{nom}}</button>
+        <button *ngIf="!userService.isAuthenticated()" class="btn btn-outline-primary me-2 mx-2" type="button" routerLink="/auth">
           <i class="fa-solid fa-user"></i>
         </button>
-        <button id="signOutBtn" *ngIf="nom" class="btn btn-outline-primary me-2 mx-2" (click)="signOut()" type="button"
+        <button id="signOutBtn" *ngIf="userService.isAuthenticated()" class="btn btn-outline-primary me-2 mx-2" (click)="signOut()" type="button"
           routerLink="/" title="Déconnexion">
           <i class="fa-solid fa-xmark danger"></i>
         </button>
@@ -105,7 +105,7 @@
             <a href="#!" class="text-reset">Angular</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Srping</a>
+            <a href="#!" class="text-reset">Spring</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -136,7 +136,7 @@
           <p><i class="fas fa-home me-3"></i> Aix en Provence</p>
           <p>
             <i class="fas fa-envelope me-3"></i>
-            lescarnetsdevoyage@gmail.common
+            lescarnetsdevoyage@gmail.com
           </p>
           <p><i class="fas fa-phone me-3"></i> 06 28 76 19 24</p>
           <p><i class="fas fa-print me-3"></i> 06 28 76 19 24</p>

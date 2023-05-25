@@ -27,16 +27,12 @@ export class MyAccountComponent implements OnInit {
       this.paysListe = paysListe.sort((a, b) => a.translations.fra.common.localeCompare(b.translations.fra.common));
       console.log(paysListe);
     });
-
-    this.cs.getValue().subscribe(nom => this.nom = nom)
-    this.cs.getValueId().subscribe(id => this.id = id)
-    console.log("nom....." + this.nom)
-    console.log("id....." + this.id)
-
-    this.activatedRoute.params.subscribe(params => {
-      const id = params['id'];
-      this.userService.getUserById(id).subscribe(u => this.user = u);
-    });
+    
+    const token = sessionStorage.getItem('tokens');
+    if (token) {
+      this.nom = this.userService.getUsernameFromToken(token);
+      console.log("nom in token....." + this.nom)
+    }
   }
 
 }
