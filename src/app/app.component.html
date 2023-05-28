@@ -22,17 +22,22 @@
       </ul>
 
       <form class="d-flex">
+        <button class="btn btn-outline-primary me-2 mx-2" type="button" routerLink="/search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
         <input class="form-control me-2 rounded-pill" type="search" style="border: solid 1px #fdac0f"
           placeholder="Rechercher" aria-label="Search" />
         <button class="btn btn-outline-primary rounded-circle" type="submit">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-        <button *ngIf="userService.isAuthenticated()" class="mx-2" id="btn-my-account" [routerLink]="'../myAccount/' + nom">{{nom}}</button>
-        <button *ngIf="!userService.isAuthenticated()" class="btn btn-outline-primary me-2 mx-2" type="button" routerLink="/auth">
+        <button *ngIf="userService.isAuthenticated()" class="mx-2" id="btn-my-account"
+          [routerLink]="'../myAccount/' + nom">{{nom}}</button>
+        <button *ngIf="!userService.isAuthenticated()" class="btn btn-outline-primary me-2 mx-2" type="button"
+          routerLink="/auth">
           <i class="fa-solid fa-user"></i>
         </button>
-        <button id="signOutBtn" *ngIf="userService.isAuthenticated()" class="btn btn-outline-primary me-2 mx-2" (click)="signOut()" type="button"
-          routerLink="/" title="Déconnexion">
+        <button id="signOutBtn" *ngIf="userService.isAuthenticated()" class="btn btn-outline-primary me-2 mx-2"
+          (click)="signOut()" type="button" routerLink="/" title="Déconnexion">
           <i class="fa-solid fa-xmark danger"></i>
         </button>
       </form>

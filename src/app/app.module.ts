@@ -22,6 +22,7 @@ import { AsieComponent } from './asie/asie.component';
 import { OceanieComponent } from './oceanie/oceanie.component';
 import { CountryComponent } from './country/country.component';
 import { AuthComponent } from './auth/auth.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { AuthComponent } from './auth/auth.component';
     OceanieComponent,
     CountryComponent,
     AuthComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

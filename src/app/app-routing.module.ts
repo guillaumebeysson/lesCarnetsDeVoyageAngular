@@ -16,6 +16,7 @@ import { CarnetsComponent } from './carnets/carnets.component';
 import { CountryComponent } from './country/country.component';
 import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './guards/auth.guard';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'destinations/asie', component: AsieComponent, canActivate: [AuthGuard] },
   { path: 'destinations/oceanie', component: OceanieComponent, canActivate: [AuthGuard] },
   { path: 'carnets/country/:country', component: CountryComponent, canActivate: [AuthGuard] },
+  { path: 'search', component: SearchComponent },
 ];
 
 @NgModule({

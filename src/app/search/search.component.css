@@ -1,0 +1,181 @@
+#carnets {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.tittleH3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+h3 {
+    font-size: 5em;
+}
+
+span {
+    display: block;
+    width: 30%;
+    /*or whatever width you want the effect of <hr>*/
+    border-top: 3px solid black;
+    margin: 0 auto;
+}
+
+.Card {
+    width: 18rem;
+    height: 28rem;
+    background: #ffffff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 0 15px 15px 0;
+    margin: 20px;
+    transition: 1s;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.Card .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 0 15px 15px 0;
+}
+
+.Card .details .card-body {
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.Card .details .card-img-opened {
+    border-radius: 0 15px 0 0;
+}
+
+.Card .details .card-img-opened img {
+    height: 12rem;
+    width: 18rem;
+    display: block;
+}
+
+.Card .details h5 {
+    font-weight: 600 !important;
+}
+
+.Card .details .card-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.Card .details .pseudo {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.Card .details #description {
+    text-overflow: ellipsis;
+    /* white-space: nowrap;
+        overflow: hidden; */
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.Card .card-body a {
+    background-color: #fdac0f;
+    border: solid 1px #fdac0f;
+}
+
+.Card .card-body a:hover {
+    color: #fdac0f;
+    background-color: #fff;
+    border: solid 1px #fdac0f;
+}
+
+.Card .card-body .btn {
+    margin: 0 25px;
+}
+
+section {
+    margin: 50px 0;
+}
+
+.separator {
+    display: block;
+    width: 90%;
+    height: 1px;
+    background-color: grey;
+    margin: 0 auto;
+}
+
+#carnetTitle input {
+    height: 50px;
+    min-width: 300px;
+    text-align: center;
+    color: #FDAC0F;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#carnetInformations input,
+select {
+    width: 300px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FDAC0F;
+    font-weight: bold;
+}
+
+#carnetInformations select option {
+    color: #FDAC0F;
+}
+
+#carnetInformations p {
+    margin: 0;
+}
+
+
+
+
+.drop-zone {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    text-align: center;
+    width: 360px;
+    height: 360px;
+    border: dashed 1px grey;
+}
+
+.drop-zone.drag-over {
+    background-color: #f7f7f7;
+}
+
+.imgPreview {
+    position: relative;
+    top: -20px;
+    border-radius: 5px;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.img-add {
+    margin: 10px;
+}
+
+.img-add p {
+    position: relative;
+    top: 140px;
+}
