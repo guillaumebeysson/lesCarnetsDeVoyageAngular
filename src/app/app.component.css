@@ -20,6 +20,40 @@
     color: crimson;
 }
 
+#rechercheRapide {
+    width: 150px !important;
+    background-color: #ffffff;
+}
+
+#listCountrySelected {
+    overflow: hidden;
+    background-color: #ffffff;
+    position: fixed;
+    right: 224px;
+    top: 45px;
+    display: none;
+    flex-direction: column;
+    justify-content: left;
+    width: 150px;
+    border-left: solid 1px #FDAC0F;
+    border-right: solid 1px #FDAC0F;
+    border-bottom: solid 1px #FDAC0F;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#listCountrySelected a {
+    text-decoration: none;
+    color: #2a2a2a;
+    padding-left: 12px;
+    cursor: pointer;
+}
+
+#listCountrySelected a:hover {
+    background-color: #FDAC0F !important;
+    color: #fff;
+}
+
 form {
     margin: inherit;
 }
@@ -39,7 +73,7 @@ footer {
 }
 
 #btn-my-account {
-    width: 200px;
+    width: 150px;
     border: solid 1px #FDAC0F;
     border-radius: 5px;
     background-color: #fff;

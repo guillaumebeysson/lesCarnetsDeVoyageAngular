@@ -19,9 +19,9 @@
         <li class="nav-item text-center">
           <a class="nav-link" routerLink="galerie">GALERIE</a>
         </li>
-        <li class="nav-item text-center">
+        <!-- <li class="nav-item text-center">
           <a class="nav-link" routerLink="carnets/randomCarnet">RANDOM</a>
-        </li>
+        </li> -->
       </ul>
 
       <form class="d-flex">
@@ -29,18 +29,27 @@
           routerLink="/search">
           RechercheAvancée
         </button>
-        <input class="form-control me-2 rounded-pill" type="search" style="border: solid 1px #fdac0f"
-          placeholder="Recherche rapide..." aria-label="Search" />
-        <button class="btn btn-outline-primary rounded-circle" type="submit">
+        <div *ngIf="userService.isAuthenticated()">
+          <input id="rechercheRapide" class="btn text-start" type="search" style="border: solid 1px #fdac0f"
+            placeholder="Entrer un pays..." aria-label="Search" (input)="rechercherPays($event)" />
+          <div id="listCountrySelected">
+            <a *ngFor="let pays of paysRecherches" routerLink="carnets/country/{{pays}}" (click)="viderInput()">{{ pays
+              }}
+            </a>
+          </div>
+        </div>
+
+
+        <!-- <button class="btn btn-outline-primary rounded-circle" type="submit">
           <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
+        </button> -->
         <button *ngIf="userService.isAuthenticated()" class="mx-2" id="btn-my-account"
           [routerLink]="'../myAccount/' + nom">{{nom}}</button>
         <button *ngIf="!userService.isAuthenticated()" class="btn btn-outline-primary me-2 mx-2" type="button"
           routerLink="/auth">
           <i class="fa-solid fa-user"></i>
         </button>
-        <button id="signOutBtn" *ngIf="userService.isAuthenticated()" class="btn btn-outline-primary me-2 mx-2"
+        <button id="signOutBtn" *ngIf="userService.isAuthenticated()" class="btn btn-outline-primary me-2"
           (click)="signOut()" type="button" routerLink="/" title="Déconnexion">
           <i class="fa-solid fa-xmark danger"></i>
         </button>
