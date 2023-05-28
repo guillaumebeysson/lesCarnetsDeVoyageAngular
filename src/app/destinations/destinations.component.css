@@ -5,15 +5,19 @@
     text-transform: uppercase;
     letter-spacing: 5px;
 }
+
 h3 {
     font-size: 5em;
 }
+
 span {
     display: block;
-    width: 30%; /*or whatever width you want the effect of <hr>*/
+    width: 30%;
+    /*or whatever width you want the effect of <hr>*/
     border-top: 3px solid black;
     margin: 0 auto;
 }
+
 /****************** Cards ***********************/
 .allCards {
     display: flex;
@@ -21,6 +25,7 @@ span {
     justify-content: center;
     flex-wrap: wrap;
 }
+
 .Card {
     width: 18rem;
     background: #ffffff;
@@ -29,36 +34,62 @@ span {
     margin: 20px;
     transition: all 0.2s;
 }
+
 .Card:hover {
     transform: scale(1.05);
 }
+
 .Card img {
     border-radius: 15px 15px 0 0;
     height: 14rem;
     object-position: 50% 50%;
 }
+
 .Card h5 {
     font-weight: 600 !important;
     padding-bottom: 1rem;
 }
+
 .Card .card-title {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
+
 .Card .pseudo {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
+
 .Card a {
     background-color: #fdac0f;
     border: solid 1px #fdac0f;
+    cursor: pointer;
 }
+
+.Card a:hover {
+    background-color: #fff;
+    color: #fdac0f;
+    border: solid 1px #fdac0f;
+}
+
 .Card .btn {
     margin: 0 25px;
 }
 
-.informationsContinents{
+.informationsContinents {
     list-style: none;
+}
+
+@media(max-width:992px) {
+    h3 {
+        font-size: 3em;
+    }
+}
+
+@media(max-width:600px) {
+    h3 {
+        font-size: 2em;
+    }
 }

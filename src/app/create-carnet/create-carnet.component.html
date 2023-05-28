@@ -41,19 +41,22 @@
       </div>
     </div>
     <div id="rightPartCarnetInformations">
-      <div class="my-2"><span><br></span></div>
+      <div id="city" class="my-2">
+        <p><i class="fa-solid fa-city"></i> Ville</p>
+        <input type="text" name="city" id="city" class="form-control" [(ngModel)]="carnet.city">
+      </div>
       <div id="organisation" class="my-2">
         <p><i class="fas fa-route"></i> Organisation</p>
         <select name="organisation" id="organisationEnum" class="form-control" [(ngModel)]="carnet.organisation">
           <option selected value> -- organisation -- </option>
           <option value="Personnel">Itinéraire personnel</option>
-          <option value="Famille">Agence de voyage</option>
-          <option value="Aucune">Aucun itinéraire prédéfini</option>
+          <option value="Agence de voyage">Agence de voyage</option>
+          <option value="Aucun">Aucun itinéraire prédéfini</option>
         </select>
       </div>
       <div id="situation" class="my-2">
         <p><i class="fas fa-hiking"></i> Situation</p>
-        <select name="situation" id="" class="form-control" [(ngModel)]="carnet.situation">
+        <select name="situation" id="situation" class="form-control" [(ngModel)]="carnet.situation">
           <option selected value> -- situation -- </option>
           <option value="Solo">Solo</option>
           <option value="Famille">Famille</option>
@@ -63,12 +66,13 @@
       </div>
       <div id="" class="my-2">
         <p><i class="fas fa-shuttle-van"></i> Moyen de transport</p>
-        <select id="" name="" class="form-control" [(ngModel)]="carnet.transport">
+        <select id="transport" name="transport" class="form-control" [(ngModel)]="carnet.transport">
           <option selected value> -- moyen de transport -- </option>
           <option value="Van">Camping-car / Van</option>
           <option value="Avion">Avion</option>
-          <option value="Voiture">Voiture</option>
           <option value="Moto">Moto</option>
+          <option value="Train">Train</option>
+          <option value="Voiture">Voiture</option>
         </select>
       </div>
     </div>
@@ -76,8 +80,8 @@
 
   <section id="introductionAndPicture1">
     <div id="introduction">
-      <textarea name="introduction" id="introduction" placeholder="Introduction..." #introduction
-        maxlength="600" [(ngModel)]="carnet.introduction"></textarea>
+      <textarea name="introduction" id="introduction" placeholder="Introduction..." #introduction maxlength="600"
+        [(ngModel)]="carnet.introduction"></textarea>
       <div class="compteurs" id="compteur-textarea-introduction">0/600</div>
     </div>
     <div class="img-add">
@@ -94,12 +98,13 @@
 
   <section id="descriptionAndPictures">
     <div id="description">
-      <textarea name="description" id="description" placeholder="Description..." #description [(ngModel)]="carnet.description"></textarea>
+      <textarea name="description" id="description" placeholder="Description..." #description
+        [(ngModel)]="carnet.description"></textarea>
       <div class="compteurs" id="compteur-textarea-description">0/600</div>
     </div>
     <div id="DescriptionsPictures">
       <div class="img-add">
-        <input type="file" id="fileUploadInput2" (change)="handleFileInput($event, 2)" #fileInput2 hidden >
+        <input type="file" id="fileUploadInput2" (change)="handleFileInput($event, 2)" #fileInput2 hidden>
         <div class="drop-zone" (drop)="onDrop($event, 2)" (dragover)="onDragOver($event)"
           (dragleave)="onDragLeave($event)" (click)="fileInput2.click()">
           <p class="m-0">Glissez-déposez une image ici...</p>
@@ -107,7 +112,7 @@
         </div>
       </div>
       <div class="img-add">
-        <input type="file" id="fileUploadInput3" (change)="handleFileInput($event, 3)" #fileInput3 hidden >
+        <input type="file" id="fileUploadInput3" (change)="handleFileInput($event, 3)" #fileInput3 hidden>
         <div class="drop-zone" (drop)="onDrop($event, 3)" (dragover)="onDragOver($event)"
           (dragleave)="onDragLeave($event)" (click)="fileInput3.click()">
           <p class="m-0">Glissez-déposez une image ici...</p>

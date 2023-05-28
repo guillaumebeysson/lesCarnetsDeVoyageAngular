@@ -15,7 +15,7 @@ export class MyAccountComponent implements OnInit {
   nom: string | null = null
   id: number | undefined = undefined
   user: User = {};
-  
+
   title = 'LesCarnetsDeVoyage';
 
   constructor(private http: HttpClient, private router: Router, private cs: CommunicateService, private activatedRoute: ActivatedRoute, private userService: UserService) { }
@@ -27,8 +27,8 @@ export class MyAccountComponent implements OnInit {
       this.paysListe = paysListe.sort((a, b) => a.translations.fra.common.localeCompare(b.translations.fra.common));
       console.log(paysListe);
     });
-    
-    const token = sessionStorage.getItem('tokens');
+
+    const token = localStorage.getItem('tokens');
     if (token) {
       this.nom = this.userService.getUsernameFromToken(token);
       console.log("nom in token....." + this.nom)

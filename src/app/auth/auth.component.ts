@@ -12,7 +12,7 @@ import { CommunicateService } from '../services/communicate.service';
 export class AuthComponent implements OnInit {
 
   user: User = {
-    id:0,
+    id: 0,
     grantType: "password",
     username: "",
     password: "",
@@ -20,24 +20,25 @@ export class AuthComponent implements OnInit {
   }
 
   erreur: string | null = null
-  constructor( private userService: UserService, private router: Router, private cs: CommunicateService){}
+  constructor(private userService: UserService, private router: Router, private cs: CommunicateService) { }
 
   ngOnInit(): void {
   }
 
-  connexion(){
+  connexion() {
     console.log(this.user);
     this.userService.checkUser(this.user).subscribe({
       next: result => {
-        sessionStorage.setItem("tokens", JSON.stringify(result))
+        localStorage.setItem("tokens", JSON.stringify(result))
         console.log(this.user);
         this.cs.sendValue(this.user.username!)
         this.router.navigateByUrl("")
       },
-      error: (e) => {this.erreur = "identifiants incorrects"
-      // + JSON.stringify(e)
-      // console.log(this.user)
-    }
+      error: (e) => {
+        this.erreur = "identifiants incorrects"
+        // + JSON.stringify(e)
+        // console.log(this.user)
+      }
     })
   }
 

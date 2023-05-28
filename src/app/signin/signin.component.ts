@@ -12,7 +12,7 @@ import { CommunicateService } from '../services/communicate.service';
 export class SigninComponent implements OnInit {
 
   user: User = {
-    id:0,
+    id: 0,
     email: "",
     username: "",
     password: "",
@@ -20,21 +20,41 @@ export class SigninComponent implements OnInit {
   }
 
   erreur: string | null = null
-  constructor( private userService: UserService, private router: Router, private cs: CommunicateService){}
+  constructor(private userService: UserService, private router: Router, private cs: CommunicateService) { }
 
   ngOnInit(): void {
   }
 
-  inscription(){
+  inscription() {
     console.log(this.user);
-    this.userService.addUser(this.user).subscribe({
-      next: result => {
-        this.router.navigateByUrl("/auth")
+    const userPayload = {
+      username: this.user.username,
+      email: this.user.email
+    };
+
+    this.userService.checkDuplicate(userPayload.username!, userPayload.email!).subscribe({
+      next: duplicate => {
+        if (duplicate.username && duplicate.email) {
+          this.erreur = "Le nom d'utilisateur et l'email sont déjà utilisés";
+        } else if (duplicate.username) {
+          this.erreur = "Le nom d'utilisateur est déjà utilisé";
+        } else if (duplicate.email) {
+          this.erreur = "L'email est déjà utilisé";
+        } else {
+          this.userService.addUser(this.user).subscribe({
+            next: result => {
+              this.router.navigateByUrl("/auth");
+            },
+            error: (e) => {
+              console.log(e);
+            }
+          });
+        }
       },
-      error: (e) => {this.erreur = "Le nom d'utilisateur ou l'email est déjà pris"
-      console.log(this.user)
-      }   
-    })
+      error: (e) => {
+        console.log(e);
+      }
+    });
   }
 
 }

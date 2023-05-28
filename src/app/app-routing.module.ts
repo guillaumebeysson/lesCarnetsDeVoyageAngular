@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: 'destinations/asie', component: AsieComponent, canActivate: [AuthGuard] },
   { path: 'destinations/oceanie', component: OceanieComponent, canActivate: [AuthGuard] },
   { path: 'carnets/country/:country', component: CountryComponent, canActivate: [AuthGuard] },
-  { path: 'search', component: SearchComponent },
+  { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
@@ -45,4 +45,4 @@ const routes: Routes = [
   })],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

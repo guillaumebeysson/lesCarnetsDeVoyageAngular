@@ -7,16 +7,20 @@
     text-transform: uppercase;
     letter-spacing: 5px;
 }
+
 h3 {
     font-size: 5em;
-  }
+}
+
 span {
     display: block;
-    width: 30%; /*or whatever width you want the effect of <hr>*/
+    width: 30%;
+    /*or whatever width you want the effect of <hr>*/
     border-top: 3px solid black;
     margin: 0 auto;
 }
-.container .blockImg{
+
+.container .blockImg {
     width: 300px;
     height: 300px;
     overflow: hidden;
@@ -24,12 +28,26 @@ span {
     cursor: pointer;
     border-radius: 15px;
 }
-.container .blockImg img{
-    transition: all ease-in-out 0.3s; 
+
+.container .blockImg img {
+    transition: all ease-in-out 0.3s;
     width: 300px;
     height: 300px;
     object-fit: cover;
 }
-.container .blockImg:hover img{
+
+.container .blockImg:hover img {
     transform: scale(1.2);
+}
+
+@media(max-width:992px) {
+    h3 {
+        font-size: 3em;
+    }
+}
+
+@media(max-width:600px) {
+    h3 {
+        font-size: 2em;
+    }
 }

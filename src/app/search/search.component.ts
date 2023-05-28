@@ -15,11 +15,11 @@ export class SearchComponent implements OnInit {
   carnet: Carnet = {};
   selectedCarnet?: Carnet;
   paysListe: any[] = [];
-  
+
   constructor(private carnetService: CarnetService, private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.carnetService.getCarnets().subscribe(res => {
+    this.carnetService.searchCarnets(this.criteresRecherche).subscribe(res => {
       this.carnets = res;
     })
     //récupère la liste des pays via l'api
@@ -33,10 +33,16 @@ export class SearchComponent implements OnInit {
   criteresRecherche: CritereRecherche = {};
 
   effectuerRecherche(): void {
+    // Modification de la propriété CSS
+    const elementCarnets = document.getElementById('carnets');
+    if (elementCarnets) {
+      elementCarnets.style.display = 'flex';
+    }
+    console.log("criteresRecherche.........." + JSON.stringify(this.criteresRecherche))
     this.carnetService.searchCarnets(this.criteresRecherche)
       .subscribe(resultat => {
-        // Traitez les résultats de la recherche ici
-        console.log("résultats....." + JSON.stringify(resultat) );
+        this.carnets = resultat;
+        console.log("résultats....." + JSON.stringify(resultat));
       });
   }
 

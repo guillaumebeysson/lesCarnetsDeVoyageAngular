@@ -1,5 +1,5 @@
 #carnets {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     align-content: center;
     justify-content: space-evenly;
@@ -146,36 +146,43 @@ select {
     margin: 0;
 }
 
-
-
-
-.drop-zone {
-    background-color: #e0e0e0;
-    border-radius: 5px;
+/******* BTN VALIDE UN CARNET *********/
+#btn-valid-search {
     text-align: center;
-    width: 360px;
-    height: 360px;
-    border: dashed 1px grey;
 }
 
-.drop-zone.drag-over {
-    background-color: #f7f7f7;
+#btn-valid-search button {
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: solid 1px #FDAC0F;
+    color: #ffffff;
+    border-radius: 10px;
+    background-color: #FDAC0F;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
-.imgPreview {
-    position: relative;
-    top: -20px;
-    border-radius: 5px;
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
+#btn-valid-search button:hover {
+    color: #FDAC0F;
+    background-color: #ffffff;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
-.img-add {
-    margin: 10px;
+@media(max-width:992px) {
+    h3 {
+        font-size: 3em;
+    }
 }
 
-.img-add p {
-    position: relative;
-    top: 140px;
+@media(max-width:600px) {
+    h3 {
+        font-size: 2em;
+    }
+
+    #carnetInformations {
+        flex-direction: column;
+        align-items: center;
+    }
 }

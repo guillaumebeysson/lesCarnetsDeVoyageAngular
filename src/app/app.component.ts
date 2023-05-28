@@ -15,18 +15,18 @@ import { UserService } from './services/user.service';
 export class AppComponent {
 
   nom: string | null = null
-  id: number | undefined = undefined; 
+  id: number | undefined = undefined;
   user: User = {}
   title = 'LesCarnetsDeVoyage';
 
   constructor(private router: Router, private cs: CommunicateService, public userService: UserService) { }
 
-  ngOnInit(): void{
-    
+  ngOnInit(): void {
+
     // this.cs.getValueId().subscribe(id => this.id = id)
     this.cs.getValue().subscribe(nom => this.nom = nom)
     // console.log("nom....." + this.nom)
-    const token = sessionStorage.getItem('tokens');
+    const token = localStorage.getItem('tokens');
     if (token) {
       this.nom = this.userService.getUsernameFromToken(token);
       console.log("nom in token....." + this.nom)
@@ -34,19 +34,19 @@ export class AppComponent {
   }
 
 
-  
+
 
   // displayAccount(){
   //   this.userService.getUserById(this.id!).subscribe(res => {
   //     this.user = res;
   //     console.log(res);
-      
+
   //     this.router.navigateByUrl(`myAccount/${this.user.id}`)
   //   });
   // }
 
   signOut() {
-    sessionStorage.removeItem('tokens')
+    localStorage.removeItem('tokens')
     this.cs.sendValue(null)
     this.router.navigateByUrl('/')
     location.reload()
