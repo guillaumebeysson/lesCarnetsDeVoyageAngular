@@ -13,7 +13,7 @@ import { Carnet } from '../interfaces/carnet';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private http: HttpClient, private carnetService: CarnetService) {}
+  constructor(private http: HttpClient, private carnetService: CarnetService) { }
 
   carnet: Carnet = {}
   carnets?: Carnet[] = [];
@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
     this.http
       .get(
         'https://restcountries.com/v3.1/alpha/' +
-          clickedCountryName.properties.iso_a2
+        clickedCountryName.properties.iso_a2
       )
       .subscribe((data: any) => {
         this.countryDetail = {
