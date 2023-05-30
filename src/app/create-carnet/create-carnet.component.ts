@@ -23,6 +23,10 @@ export class CreateCarnetComponent implements OnInit {
   imageUrl2: string | undefined;
   imageUrl3: string | undefined;
 
+  imageFile1: File | undefined;
+  imageFile2: File | undefined;
+  imageFile3: File | undefined;
+
   erreur: string | null = null
   today = new Date();
 
@@ -58,10 +62,6 @@ export class CreateCarnetComponent implements OnInit {
     });
   }
 
-
-
-
-
   onDragOver(event: DragEvent) {
     event.preventDefault();
     this.highlightDropZone(true);
@@ -81,10 +81,13 @@ export class CreateCarnetComponent implements OnInit {
         const reader = new FileReader();
         reader.onload = () => {
           if (index === 1) {
+            this.imageFile1 = file;
             this.imageUrl1 = reader.result?.toString();
           } else if (index === 2) {
+            this.imageFile2 = file;
             this.imageUrl2 = reader.result?.toString();
           } else if (index === 3) {
+            this.imageFile3 = file;
             this.imageUrl3 = reader.result?.toString();
           }
         };
@@ -105,10 +108,13 @@ export class CreateCarnetComponent implements OnInit {
         const reader = new FileReader();
         reader.onload = () => {
           if (index === 1) {
+            this.imageFile1 = file;
             this.imageUrl1 = reader.result?.toString();
           } else if (index === 2) {
+            this.imageFile2 = file;
             this.imageUrl2 = reader.result?.toString();
           } else if (index === 3) {
+            this.imageFile3 = file;
             this.imageUrl3 = reader.result?.toString();
           }
         };
@@ -133,20 +139,28 @@ export class CreateCarnetComponent implements OnInit {
       const nombreCaracteres = this.description.nativeElement.value.length;
       this.compteur2.innerHTML = `${nombreCaracteres}/600`;
     });
-
   }
 
   validCarnet() {
     console.log("carnet......." + JSON.stringify(this.carnet));
-    this.carnetService.addCarnet(this.carnet).subscribe({
+
+    const picture1File = this.imageFile1 || undefined;
+    const picture2File = this.imageFile2 || undefined;
+    const picture3File = this.imageFile3 || undefined;
+
+    console.log("picture1File......." + picture1File);
+    console.log("picture2File......." + picture2File);
+    console.log("picture3File......." + picture3File);
+  
+    this.carnetService.addCarnet(this.carnet, picture1File, picture2File, picture3File).subscribe({
       next: result => {
-        this.router.navigateByUrl("/")
+        this.router.navigateByUrl("/");
       },
       error: (e) => {
-        this.erreur = "carnet non ajouté"
-        console.log(this.carnet)
+        this.erreur = "carnet non ajouté";
+        console.log(this.carnet);
       }
-    })
+    });
   }
 
 
