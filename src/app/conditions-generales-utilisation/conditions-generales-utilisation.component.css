@@ -1,0 +1,13 @@
+#container {
+    margin: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px 0;
+    text-decoration: underline;
+}
+
+article {
+    margin: 30px 0;
+}
