@@ -24,15 +24,15 @@
         </li> -->
       </ul>
 
-      <form class="d-flex">
-        <button class="btn btn-outline-primary me-2 mx-2 d-flex text-center align-center" type=" button"
+      <form class="d-flex" id="leftPartNavBar">
+        <button class="btn btn-outline-primary me-2 mx-2 my-2 d-flex text-center align-center" type=" button"
           routerLink="/search">
-          RechercheAvancée
+          Recherche avancée
         </button>
         <div *ngIf="userService.isAuthenticated()">
-          <input id="rechercheRapide" class="btn text-start" type="search" style="border: solid 1px #fdac0f"
+          <input id="rechercheRapide" class="btn text-start my-2" type="search" style="border: solid 1px #fdac0f"
             placeholder="Entrer un pays..." aria-label="Search" (input)="rechercherPays($event)" />
-          <div id="listCountrySelected">
+          <div id="listCountrySelected" class="my-2">
             <a *ngFor="let pays of paysRecherches" routerLink="carnets/country/{{pays}}" (click)="viderInput()">{{ pays
               }}
             </a>
@@ -43,13 +43,13 @@
         <!-- <button class="btn btn-outline-primary rounded-circle" type="submit">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button> -->
-        <button *ngIf="userService.isAuthenticated()" class="mx-2" id="btn-my-account"
+        <button *ngIf="userService.isAuthenticated()" class="mx-2 my-2" id="btn-my-account"
           [routerLink]="'../myAccount/' + nom">{{nom}}</button>
-        <button *ngIf="!userService.isAuthenticated()" class="btn btn-outline-primary me-2 mx-2" type="button"
+        <button *ngIf="!userService.isAuthenticated()" class="btn btn-outline-primary me-2 mx-2 my-2" type="button"
           routerLink="/auth">
           <i class="fa-solid fa-user"></i>
         </button>
-        <button id="signOutBtn" *ngIf="userService.isAuthenticated()" class="btn btn-outline-primary me-2"
+        <button id="signOutBtn" *ngIf="userService.isAuthenticated()" class="btn btn-outline-primary me-2 my-2"
           (click)="signOut()" type="button" routerLink="/" title="Déconnexion">
           <i class="fa-solid fa-xmark danger"></i>
         </button>

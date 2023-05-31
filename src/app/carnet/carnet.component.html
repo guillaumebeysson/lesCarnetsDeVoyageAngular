@@ -59,7 +59,8 @@
     <p class="p-2">{{carnet?.introduction}}</p>
     <div>
       <a (click)="show(carnet?.picture1 ?? '')">
-        <img class="p-2" style="max-width:400px; height:400px" id="imageresource" src="{{carnet?.picture1}}">
+        <img class="p-2" style="max-width:400px; height:400px" id="imageresource"
+          src="http://localhost:8080/files/{{carnet?.picture1}}">
       </a>
       <!-- Creates the bootstrap modal where the image will appear -->
       <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
@@ -72,7 +73,7 @@
                   class="fa-regular fa-circle-xmark h1"></i></button>
             </div>
             <div class="modal-body d-flex justify-content-center">
-              <img src="{{imageUrl}}" id="imagepreview1">
+              <img src="http://localhost:8080/files/{{imageUrl}}" id="imagepreview1">
             </div>
           </div>
         </div>
@@ -85,7 +86,8 @@
     <div class="d-flex justify-content-around flex-lg-row flex-column align-items-center">
       <div>
         <a (click)="show(carnet?.picture2 ?? '')">
-          <img class="p-2" style="max-width:400px; height:400px" id="imageresource" src="{{carnet?.picture2}}">
+          <img class="p-2" style="max-width:400px; height:400px" id="imageresource"
+            src="http://localhost:8080/files/{{carnet?.picture2}}">
         </a>
         <!-- Creates the bootstrap modal where the image will appear -->
         <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
@@ -98,7 +100,7 @@
                     class="fa-regular fa-circle-xmark h1"></i></button>
               </div>
               <div class="modal-body d-flex justify-content-center">
-                <img src="{{imageUrl}}" id="imagepreview2">
+                <img src="http://localhost:8080/files/{{imageUrl}}" id="imagepreview2">
               </div>
             </div>
           </div>
@@ -106,7 +108,8 @@
       </div>
       <div>
         <a (click)="show(carnet?.picture3 ?? '')">
-          <img class="p-2" style="max-width:400px; height:400px" id="imageresource" src="{{carnet?.picture3}}">
+          <img class="p-2" style="max-width:400px; height:400px" id="imageresource"
+            src="http://localhost:8080/files/{{carnet?.picture3}}">
         </a>
         <!-- Creates the bootstrap modal where the image will appear -->
         <div [style.display]="showModal ? 'block' : 'none'" class="modal" id="imagemodal" tabindex="-1" role="dialog"
@@ -119,7 +122,7 @@
                     class="fa-regular fa-circle-xmark h1"></i></button>
               </div>
               <div class="modal-body d-flex justify-content-center">
-                <img src="{{imageUrl}}" id="imagepreview3">
+                <img src="http://localhost:8080/files/{{imageUrl}}" id="imagepreview3">
               </div>
             </div>
           </div>

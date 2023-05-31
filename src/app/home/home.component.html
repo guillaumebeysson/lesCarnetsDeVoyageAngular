@@ -23,11 +23,11 @@
     <div class="allCards my-5">
       <div class="Card" *ngFor="let carnet of carnets">
         <div class="cover">
-          <img src="{{carnet.picture1}}" alt="image">
+          <img src="http://localhost:8080/files/{{carnet.picture1}}" alt="image">
         </div>
         <div class="details">
           <div class="card-img-opened">
-            <img src="{{carnet.picture1}}" class="card-img-top" alt="..." />
+            <img src="http://localhost:8080/files/{{carnet.picture1}}" class="card-img-top" alt="..." />
           </div>
           <div class="card-body">
             <h5 class="card-title">
@@ -53,7 +53,7 @@
       <span></span>
     </div>
     <div class="voirTousLesCarnets container mx-auto">
-      <a routerLink="carnets">Voir tous les carnets</a>
+      <a id="voirTousLesCarnets" routerLink="carnets">Voir tous les carnets</a>
     </div>
     <p class="text-center">Accéder à tous les carnets quelque soit leur pays !</p>
   </section>

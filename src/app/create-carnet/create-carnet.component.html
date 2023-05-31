@@ -88,7 +88,7 @@
       <input type="file" id="fileUploadInput1" (change)="handleFileInput($event, 1)" #fileInput1 hidden>
       <div class="drop-zone" (drop)="onDrop($event, 1)" (dragover)="onDragOver($event)"
         (dragleave)="onDragLeave($event)" (click)="fileInput1.click()">
-        <p class="m-0">Glissez-déposez une image ici...</p>
+        <p class="m-0">Cliquer... <br> ou <br> Glissez-déposez une image ici...</p>
         <img *ngIf="imageUrl1" class="imgPreview" [src]="imageUrl1">
       </div>
     </div>
@@ -98,7 +98,7 @@
 
   <section id="descriptionAndPictures">
     <div id="description">
-      <textarea name="description" id="description" placeholder="Description..." #description
+      <textarea name="description" id="description" placeholder="Description..." #description maxlength="600"
         [(ngModel)]="carnet.description"></textarea>
       <div class="compteurs" id="compteur-textarea-description">0/600</div>
     </div>
@@ -107,7 +107,7 @@
         <input type="file" id="fileUploadInput2" (change)="handleFileInput($event, 2)" #fileInput2 hidden>
         <div class="drop-zone" (drop)="onDrop($event, 2)" (dragover)="onDragOver($event)"
           (dragleave)="onDragLeave($event)" (click)="fileInput2.click()">
-          <p class="m-0">Glissez-déposez une image ici...</p>
+          <p class="m-0">Cliquer... <br> ou <br> Glissez-déposez une image ici...</p>
           <img *ngIf="imageUrl2" class="imgPreview" [src]="imageUrl2">
         </div>
       </div>
@@ -115,7 +115,7 @@
         <input type="file" id="fileUploadInput3" (change)="handleFileInput($event, 3)" #fileInput3 hidden>
         <div class="drop-zone" (drop)="onDrop($event, 3)" (dragover)="onDragOver($event)"
           (dragleave)="onDragLeave($event)" (click)="fileInput3.click()">
-          <p class="m-0">Glissez-déposez une image ici...</p>
+          <p class="m-0">Cliquer... <br> ou <br> Glissez-déposez une image ici...</p>
           <img *ngIf="imageUrl3" class="imgPreview" [src]="imageUrl3">
         </div>
       </div>
@@ -123,6 +123,8 @@
   </section>
   <div id="btnValid" class="my-5">
     <button (click)="validCarnet()">Valider le carnet</button>
+    <p *ngIf="erreur" class="text-danger my-3">Les champs Titre, Pays, Introduction, Description et 3
+      photos sont obligatoires ! </p>
   </div>
 
 </div>

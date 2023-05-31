@@ -80,41 +80,47 @@ textarea {
 
 .imgPreview {
     position: relative;
-    top: -20px;
+    top: -68px;
     border-radius: 5px;
     width: 350px;
     height: 350px;
     object-fit: cover;
 }
-.img-add{
+
+.img-add {
     margin: 10px;
 }
+
 .img-add p {
     position: relative;
     top: 140px;
 }
 
-#descriptionAndPictures{
+#descriptionAndPictures {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 #description {
     width: 600px;
     border-radius: 5px;
     min-height: 300px;
     padding: 10px;
 }
-#DescriptionsPictures{
+
+#DescriptionsPictures {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
-#btnValid{
+
+#btnValid {
     text-align: center;
 }
-#btnValid button{
+
+#btnValid button {
     border: solid 1px #FDAC0F;
     border-radius: 5px;
     padding: 10px;
@@ -123,7 +129,48 @@ textarea {
     color: #FDAC0F;
     background-color: #fafafa;
 }
-#btnValid button:hover{
+
+#btnValid button:hover {
     background-color: #FDAC0F;
     color: #fff;
+}
+
+@media(max-width:1202px) {
+    #introductionAndPicture1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #introduction {
+        width: 80vw;
+        min-height: 300px;
+        padding: 10px;
+    }
+
+    #description {
+        width: 80vw;
+        min-height: 300px;
+        padding: 10px;
+    }
+
+    #DescriptionsPictures {
+        flex-direction: column;
+    }
+}
+
+@media(max-width:700px) {
+    #carnetTitle {
+        width: 100%;
+    }
+
+    #inputTitle {
+        width: 100%;
+    }
+
+    #carnetInformations {
+        flex-direction: column;
+        align-items: center;
+    }
 }

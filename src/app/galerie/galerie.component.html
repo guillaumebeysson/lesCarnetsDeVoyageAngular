@@ -5,6 +5,6 @@
 
 <div class="container d-flex justify-content-center flex-wrap my-5">
   <div class="blockImg m-2" *ngFor="let carnet of carnets">
-    <img src="{{carnet.picture1}}" alt="" [routerLink]="'//carnets/' + carnet.id">
+    <img src="http://localhost:8080/files/{{carnet.picture1}}" alt="" [routerLink]="'//carnets/' + carnet.id">
   </div>
 </div>

@@ -22,11 +22,13 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .blocTittleOnVideo img {
   width: 200px;
   display: block;
   margin: 0 auto;
 }
+
 .blocTittleOnVideo h1 {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -35,6 +37,7 @@
   text-transform: uppercase;
   letter-spacing: 5px;
 }
+
 .blocTittleOnVideo h2 {
   color: #a63e00;
   text-transform: uppercase;
@@ -43,12 +46,15 @@
   font-size: large;
   margin-top: 50px;
 }
+
 #derniersCarnets {
   min-height: 80vh;
 }
+
 #carnetsPopulaires {
   min-height: 80vh;
 }
+
 .tittleH3 {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
@@ -56,12 +62,15 @@
   text-transform: uppercase;
   letter-spacing: 5px;
 }
+
 h3 {
   font-size: 5em;
 }
+
 span {
   display: block;
-  width: 30%; /*or whatever width you want the effect of <hr>*/
+  width: 30%;
+  /*or whatever width you want the effect of <hr>*/
   border-top: 3px solid black;
   margin: 0 auto;
 }
@@ -73,6 +82,7 @@ span {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
 .Card {
   width: 18rem;
   height: 28rem;
@@ -84,7 +94,8 @@ span {
   position: relative;
   transform-style: preserve-3d;
 }
-.Card .cover{
+
+.Card .cover {
   position: relative;
   width: 18rem;
   height: 28rem;
@@ -101,7 +112,8 @@ span {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
   clip-path: inset(-15px -15px -15px 0px);
 }
-.Card .cover img{
+
+.Card .cover img {
   height: 28rem;
   border-radius: 0 15px 15px 0;
   position: absolute;
@@ -109,14 +121,17 @@ span {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.Card:hover{
+
+.Card:hover {
   transform: perspective(2000px) translate(50%);
-  
+
 }
-.Card:hover .cover{
+
+.Card:hover .cover {
   transform: rotateY(-180deg);
 }
-.Card .details{
+
+.Card .details {
   position: absolute;
   top: 0;
   left: 0;
@@ -131,33 +146,39 @@ span {
   border-radius: 0 15px 15px 0;
 }
 
-.Card .details .card-body{
+.Card .details .card-body {
   width: 18rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
+
 .Card .details .card-img-opened {
   border-radius: 0 15px 0 0;
 }
-.Card .details .card-img-opened img{
+
+.Card .details .card-img-opened img {
   height: 12rem;
   width: 18rem;
   display: none;
 }
+
 .Card .details h5 {
   font-weight: 600 !important;
 }
+
 .Card .details .card-title {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
+
 .Card .details .pseudo {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
+
 .Card .details #description {
   text-overflow: ellipsis;
   /* white-space: nowrap;
@@ -167,18 +188,22 @@ span {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
 .Card a {
   background-color: #fdac0f;
   border: solid 1px #fdac0f;
 }
+
 .Card a:hover {
   color: #fdac0f;
   background-color: #fff;
   border: solid 1px #fdac0f;
 }
+
 .Card .btn {
   margin: 0 25px;
 }
+
 /******************** Tous les carnets **************************/
 #tousLesCarnets .voirTousLesCarnets {
   width: 100%;
@@ -194,9 +219,12 @@ span {
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
   transition: all 0.2s;
 }
+
+
 #tousLesCarnets .voirTousLesCarnets:hover {
   transform: scale(1.02);
 }
+
 #tousLesCarnets a {
   color: #ffffff;
   text-decoration: none;
@@ -206,10 +234,17 @@ span {
   font-weight: 400;
   font-size: 40px;
 }
+
+#voirTousLesCarnets {
+  font-size: 2em !important;
+
+}
+
 #tousLesCarnets p {
   margin-top: -40px;
   margin-bottom: 200px;
 }
+
 /******************** Destination Aleatoire **************************/
 #destinationAleatoire .btnDecouvreUnCarnet {
   width: 100%;
@@ -225,9 +260,15 @@ span {
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
   transition: all 0.2s;
 }
+
+#destinationAleatoire .btnDecouvreUnCarnet a {
+  font-size: 3vw;
+}
+
 #destinationAleatoire .btnDecouvreUnCarnet:hover {
   transform: scale(1.02);
 }
+
 #destinationAleatoire a {
   color: #ffffff;
   text-decoration: none;
@@ -237,34 +278,42 @@ span {
   font-weight: 400;
   font-size: 40px;
 }
+
 #destinationAleatoire p {
   margin-top: -40px;
   margin-bottom: 200px;
 }
+
 /*************************** Map ***********************************/
 .Map {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
   overflow: hidden;
 }
+
 .cardCountry {
   width: 280px;
   height: 500px;
 }
+
 .Map .btn {
   background-color: #fdae0f;
   border: solid 1px #fdac0f;
 }
+
 .Map .btn:hover {
   background-color: #fcc24c;
   border: solid 1px #fcc24c;
 }
+
 .infoCountry {
   font-family: "Montserrat", sans-serif;
 }
+
 h6 {
   font-size: x-large;
 }
+
 .infoCountry p,
 a {
   font-size: small;
@@ -273,17 +322,20 @@ a {
 /************* MEDIA QUERRIES *******************/
 
 @media (max-width: 1600px) {
-  .Card .details .card-img-opened img{
+  .Card .details .card-img-opened img {
     display: block;
   }
-  .Card .cover{
+
+  .Card .cover {
     display: none;
   }
-  .Card:hover{
+
+  .Card:hover {
     transform: none;
   }
 
 }
+
 @media (max-width: 769px) {
   .blocTittleOnVideo {
     width: 280px;
@@ -291,25 +343,29 @@ a {
     margin: 250px auto;
     margin-bottom: 350px;
   }
+
   .blocTittleOnVideo img {
     width: 50px;
     display: block;
     margin: 20px auto 10px auto;
   }
+
   .blocTittleOnVideo h1 {
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     text-align: center;
     font-size: 2em;
   }
+
   .blocTittleOnVideo h2 {
     font-size: small;
     margin-top: 10px;
   }
+
   h3 {
     font-size: 2em;
   }
-  
+
 }
 
 @media (max-width: 576px) {
@@ -319,21 +375,25 @@ a {
     margin: 250px auto;
     margin-bottom: 350px;
   }
+
   .blocTittleOnVideo img {
     width: 50px;
     display: block;
     margin: 20px auto 10px auto;
   }
+
   .blocTittleOnVideo h1 {
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     text-align: center;
     font-size: 2em;
   }
+
   .blocTittleOnVideo h2 {
     font-size: small;
     margin-top: 10px;
   }
+
   h3 {
     font-size: 2em;
   }

@@ -1,5 +1,5 @@
 .btn-outline-primary {
-    color: #FDAC0F;
+    color: #0f89a3;
     background-color: #fff;
     border-color: #FDAC0F;
     /*set the color you want here*/
@@ -31,7 +31,7 @@
     background-color: #ffffff;
     position: fixed;
     right: 224px;
-    top: 45px;
+    top: 40px;
     display: none;
     flex-direction: column;
     justify-content: left;
@@ -51,7 +51,7 @@
 }
 
 #listCountrySelected a:hover {
-    background-color: #FDAC0F !important;
+    background-color: #0f89a3 !important;
     color: #fff;
 }
 
@@ -66,6 +66,8 @@ form {
     cursor: pointer;
 }
 
+
+
 footer {
     position: relative;
     left: 0;
@@ -78,7 +80,7 @@ footer {
     border: solid 1px #FDAC0F;
     border-radius: 5px;
     background-color: #fff;
-    color: #FDAC0F;
+    color: #0f89a3;
 }
 
 #btn-my-account:hover {
@@ -89,5 +91,11 @@ footer {
 @media(max-width:992px) {
     .navbar .rightPart {
         flex-direction: column !important;
+    }
+
+    #leftPartNavBar {
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
     }
 }
