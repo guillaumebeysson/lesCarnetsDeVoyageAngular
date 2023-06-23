@@ -1,7 +1,7 @@
 <div class="container">
 
   <div id="carnetTitle" class="text-center my-5 w-auto">
-    <input [(ngModel)]="carnet.title" type="text" id="inputTitle" placeholder="Titre du carnet">
+    <input [(ngModel)]="carnet.title" type="text" id="inputTitle" placeholder="Titre du carnet *">
   </div>
 
   <section id="carnetInformations" class="d-flex justify-content-around">
@@ -10,7 +10,7 @@
         <p><i class="fas fa-user"></i> name</p>
       </div>
       <div id="countrySelected" class="my-2">
-        <p><i class="fas fa-flag"></i> Pays</p>
+        <p><i class="fas fa-flag"></i> Pays *</p>
         <select name="countries" id="countries" class="form-control" [(ngModel)]="carnet.country">
           <option disabled selected value> -- pays -- </option>
           <option *ngFor="let pays of paysListe" [value]="pays.translations.fra.common">{{pays.translations.fra.common}}

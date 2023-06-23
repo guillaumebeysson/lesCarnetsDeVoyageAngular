@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { CommunicateService } from './services/communicate.service';
 import { User } from './interfaces/user';
 import { UserService } from './services/user.service';
-import { Observable, debounceTime, distinctUntilChanged, of } from 'rxjs';
 
 
 @Component({
@@ -22,10 +21,20 @@ export class AppComponent {
   title = 'LesCarnetsDeVoyage';
   paysRecherches: string[] = [];
   listePays: any[] = [];
+  backgroundColor: string = 'white';
+  color: string = 'black';
 
   constructor(private router: Router, private cs: CommunicateService, public userService: UserService, private http: HttpClient) { }
 
   ngOnInit(): void {
+
+    // Activation du mode Jour / Nuit suivant l'heure de l'utilisateur
+    const heureActuelle = new Date().getHours();
+    console.log(heureActuelle)
+    this.backgroundColor = (heureActuelle >= 8 && heureActuelle < 20) ? '' : 'black';
+    this.color = (heureActuelle >= 8 && heureActuelle < 20) ? 'black' : 'grey';
+
+
     this.cs.getValue().subscribe(nom => this.nom = nom)
     const token = localStorage.getItem('tokens');
     if (token) {

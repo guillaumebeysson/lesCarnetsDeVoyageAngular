@@ -1,176 +1,181 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light position-sticky">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="../assets/logoCamping/logo_camping.png" style="width: 40px" alt="" /></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item text-center">
-          <a class="nav-link" routerLink="">HOME</a>
-        </li>
-        <li class="nav-item text-center">
-          <a class="nav-link" routerLink="destinations">DESTINATIONS</a>
-        </li>
-        <li class="nav-item text-center">
-          <a class="nav-link" routerLink="carnets">CARNETS</a>
-        </li>
-        <li class="nav-item text-center">
-          <a class="nav-link" routerLink="galerie">GALERIE</a>
-        </li>
-        <!-- <li class="nav-item text-center">
+<div [ngStyle]="{ 'background-color': backgroundColor, 'color': color }">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light position-sticky">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="../assets/logoCamping/logo_camping.png" style="width: 40px"
+          alt="" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item text-center">
+            <a class="nav-link" routerLink="">HOME</a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link" routerLink="destinations">DESTINATIONS</a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link" routerLink="carnets">CARNETS</a>
+          </li>
+          <li class="nav-item text-center">
+            <a class="nav-link" routerLink="galerie">GALERIE</a>
+          </li>
+          <!-- <li class="nav-item text-center">
           <a class="nav-link" routerLink="carnets/randomCarnet">RANDOM</a>
         </li> -->
-      </ul>
+        </ul>
 
-      <form class="d-flex" id="leftPartNavBar">
-        <button class="btn btn-outline-primary me-2 mx-2 my-2 d-flex text-center align-center" type=" button"
-          routerLink="/search">
-          Recherche avancée
-        </button>
-        <div *ngIf="userService.isAuthenticated()">
-          <input id="rechercheRapide" class="btn text-start my-2" type="search" style="border: solid 1px #fdac0f"
-            placeholder="Entrer un pays..." aria-label="Search" (input)="rechercherPays($event)" />
-          <div id="listCountrySelected" class="my-2">
-            <a *ngFor="let pays of paysRecherches" routerLink="carnets/country/{{pays}}" (click)="viderInput()">{{ pays
-              }}
-            </a>
+        <form class="d-flex" id="leftPartNavBar">
+          <button class="btn btn-outline-primary me-2 mx-2 my-2 d-flex text-center align-center" type=" button"
+            routerLink="/search">
+            Recherche avancée
+          </button>
+          <div *ngIf="userService.isAuthenticated()">
+            <input id="rechercheRapide" class="btn text-start my-2" type="search" style="border: solid 1px #fdac0f"
+              placeholder="Entrer un pays..." aria-label="Search" (input)="rechercherPays($event)" />
+            <div id="listCountrySelected" class="my-2">
+              <a *ngFor="let pays of paysRecherches" routerLink="carnets/country/{{pays}}" (click)="viderInput()">{{
+                pays
+                }}
+              </a>
+            </div>
           </div>
-        </div>
 
 
-        <!-- <button class="btn btn-outline-primary rounded-circle" type="submit">
+          <!-- <button class="btn btn-outline-primary rounded-circle" type="submit">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button> -->
-        <button *ngIf="userService.isAuthenticated()" class="mx-2 my-2" id="btn-my-account"
-          [routerLink]="'../myAccount/' + nom">{{nom}}</button>
-        <button *ngIf="!userService.isAuthenticated()" class="btn btn-outline-primary me-2 mx-2 my-2" type="button"
-          routerLink="/auth">
-          <i class="fa-solid fa-user"></i>
-        </button>
-        <button id="signOutBtn" *ngIf="userService.isAuthenticated()" class="btn btn-outline-primary me-2 my-2"
-          (click)="signOut()" type="button" routerLink="/" title="Déconnexion">
-          <i class="fa-solid fa-xmark danger"></i>
-        </button>
-      </form>
-    </div>
-  </div>
-</nav>
-<!-- nav -->
-
-<!-- ************************* router outlet ************************* -->
-<router-outlet></router-outlet>
-
-<!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted">
-  <!-- Section: Social media -->
-  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-    <!-- Left -->
-    <div class="me-5 d-none d-lg-block">
-      <span>Rejoins Les Carnets De Voyage sur tous nos réseaux sociaux</span>
-    </div>
-    <!-- Left -->
-
-    <!-- Right -->
-    <div>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-google"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="" class="me-4 text-reset">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <!-- Right -->
-  </section>
-  <!-- Section: Social media -->
-
-  <!-- Section: Links  -->
-  <section class="">
-    <div class="container text-center text-md-start mt-5">
-      <!-- Grid row -->
-      <div class="row mt-3">
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <!-- Content -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Les Carnets De Voyage
-          </h6>
-          <p>
-            Premier site d'idée voyage partout dans le monde ! Postez vos carnets et partagez-les avec tous les
-            utilisateurs !
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">Technologies</h6>
-          <p>
-            <a href="#!" class="text-reset">Angular</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Spring</a>
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">Liens utiles</h6>
-          <p>
-            <a routerLink="cgu" class="text-reset">Conditions Générales</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Settings</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Orders</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Help</a>
-          </p>
-        </div>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-          <p><i class="fas fa-home me-3"></i> Aix en Provence</p>
-          <p>
-            <i class="fas fa-envelope me-3"></i>
-            lescarnetsdevoyage@gmail.com
-          </p>
-          <p><i class="fas fa-phone me-3"></i> 06 28 76 19 24</p>
-          <p><i class="fas fa-print me-3"></i> 06 28 76 19 24</p>
-        </div>
-        <!-- Grid column -->
+          <button *ngIf="userService.isAuthenticated()" class="mx-2 my-2" id="btn-my-account"
+            [routerLink]="'../myAccount/' + nom">{{nom}}</button>
+          <button *ngIf="!userService.isAuthenticated()" class="btn btn-outline-primary me-2 mx-2 my-2" type="button"
+            routerLink="/auth">
+            <i class="fa-solid fa-user"></i>
+          </button>
+          <button id="signOutBtn" *ngIf="userService.isAuthenticated()" class="btn btn-outline-primary me-2 my-2"
+            (click)="signOut()" type="button" routerLink="/" title="Déconnexion">
+            <i class="fa-solid fa-xmark danger"></i>
+          </button>
+        </form>
       </div>
-      <!-- Grid row -->
     </div>
-  </section>
-  <!-- Section: Links  -->
+  </nav>
+  <!-- nav -->
 
-  <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
-    © 2021 Copyright:
-    <a class="text-reset fw-bold" href="http://guillaume-beysson.netlify.app">May</a>
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
+  <!-- ************************* router outlet ************************* -->
+  <router-outlet></router-outlet>
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-muted"
+    [ngStyle]="{ 'background-color': backgroundColor, 'color': color }">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span>Rejoins Les Carnets De Voyage sur tous nos réseaux sociaux</span>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>Les Carnets De Voyage
+            </h6>
+            <p>
+              Premier site d'idée voyage partout dans le monde ! Postez vos carnets et partagez-les avec tous les
+              utilisateurs !
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Technologies</h6>
+            <p>
+              <a href="#!" class="text-reset">Angular</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Spring</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Liens utiles</h6>
+            <p>
+              <a routerLink="cgu" class="text-reset">Conditions Générales</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Settings</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Orders</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i> Aix en Provence</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              lescarnetsdevoyage@gmail.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> 06 28 76 19 24</p>
+            <p><i class="fas fa-print me-3"></i> 06 28 76 19 24</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
+      © 2021 Copyright:
+      <a class="text-reset fw-bold" href="http://guillaume-beysson.netlify.app">May</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</div>

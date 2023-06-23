@@ -95,6 +95,8 @@ export class CarnetService {
       params = params.delete('transport');
     }
 
+    console.log("params......." + params)
+
     return this.http.get<any>(`${this.url}/search`, { params });
   }
 }
