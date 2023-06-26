@@ -3,6 +3,8 @@ import { Component, OnInit, Input, Output, EventEmitter, ElementRef, ViewChild }
 import { CarnetService } from '../services/carnet.service';
 import { Router } from '@angular/router';
 import { Carnet } from '../interfaces/carnet';
+import { User } from '../interfaces/user';
+import { UserService } from '../services/user.service';
 
 
 
@@ -27,12 +29,13 @@ export class CreateCarnetComponent implements OnInit {
   imageFile2: File | undefined;
   imageFile3: File | undefined;
 
+
   erreur: string | null = null
   today = new Date();
 
-
   carnet: Carnet = {
     id: 0,
+    author: undefined,
     title: "",
     introduction: "",
     description: "",
@@ -49,11 +52,19 @@ export class CreateCarnetComponent implements OnInit {
     date: this.today
   }
 
-  constructor(private http: HttpClient, private carnetService: CarnetService, private router: Router) { }
+  constructor(private http: HttpClient, private carnetService: CarnetService, private router: Router, private userService: UserService) { }
 
   ngOnInit() {
     this.compteur1 = document.getElementById('compteur-textarea-introduction')!;
     this.compteur2 = document.getElementById('compteur-textarea-description')!;
+    const token = localStorage.getItem('tokens');
+
+    if (token) {
+      this.userService.getUserById(this.userService.getIdFromToken(token)).subscribe((user) => {
+        this.carnet.author = user;
+        console.log("testcarnet.................................."+ JSON.stringify(this.carnet))
+      })
+    }
     //récupère la liste des pays via l'api
     this.http.get<any[]>('https://restcountries.com/v3.1/all').subscribe(paysListe => {
       // stocke la liste des pays en francais par ordre alphabetique

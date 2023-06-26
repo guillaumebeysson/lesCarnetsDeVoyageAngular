@@ -7,18 +7,61 @@
     <h2 class="my-3">Mes informations personnelles:</h2>
     <ul>
       <li>Name: {{nom}}</li>
-      <li>Email:</li>
+      <li>Email: {{userObject?.email}}</li>
       <li>Nationalité:
         <select>
+          <option>-- choisir --</option>
           <option *ngFor="let pays of paysListe" [value]="pays.translations.fra.common">{{pays.translations.fra.common}}
           </option>
         </select>
       </li>
     </ul>
   </div>
+
+  <h2 class="my-3">Mes carnets:</h2>
   <div id="carnets">
-    <h2 class="my-3">Mes carnets:</h2>
+    <div *ngFor="let carnet of carnets">
+      <div class="Card">
+        <div class="details">
+          <div class="card-img-opened">
+            <img src="http://localhost:8080/files/{{carnet.picture1}}" class="card-img-top" alt="..." />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">
+              {{carnet.title}}
+            </h5>
+            <p class="pseudo text-secondary">
+              @{{carnet.country}}
+            </p>
+            <p id="description" class="card-text">
+              {{carnet.description}}
+            </p>
+            <a [routerLink]="'../../carnets/' + carnet?.id"
+              class="btn btn-primary rounded-pill d-flex justify-content-center">Découvrir</a>
+          </div>
+          <div class="modifyOrDelete">
+            <div>
+              <a class="modify"><i class="fa-solid fa-pen-to-square"></i> Modifier</a>
+            </div>
+            <div>
+              <a class="delete" (click)="onModal(carnet?.id)"><i class="fa-solid fa-trash-can"></i> Supprimer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <div id="modalDelete" *ngIf="showModalDelete">
+    <p>
+      Etes vous sûr de vouloir supprimer ce carnet ?
+    </p>
+    <div id="buttonsValidate">
+      <a id="validDelete" (click)="onDelete()"><i class="fa-solid fa-check"></i></a>
+      <a id="unValidDelete" (click)="closeModal()"><i class="fa-solid fa-xmark"></i></a>
+    </div>
+  </div>
+
   <div id="carnetsFavoris">
     <h2 class="my-3">Mes carnets favoris:</h2>
   </div>

@@ -4,6 +4,7 @@ import { User } from '../interfaces/user';
 import { Token } from '../interfaces/token';
 import jwt_decode from "jwt-decode";
 import { Observable } from 'rxjs';
+import { Carnet } from '../interfaces/carnet';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,9 @@ export class UserService {
   getUserById(id: number) {
     return this.http.get<User>(`${this.urlUser}/${id}`)
   }
+  getCarnetByUser(id: number) {
+    return this.http.get<Carnet[]>(`${this.urlUser}/${id}/carnets`)
+  }
 
   addUser(user: User) {
     return this.http.post<User>(this.urlUser, user);
@@ -28,7 +32,13 @@ export class UserService {
 
   getUsernameFromToken(token: string) {
     const decoded: { sub: string } = jwt_decode(token)
+    console.log("username.........." + decoded.sub)
     return decoded.sub
+  }
+  getIdFromToken(token: string) {
+    const decoded: { id: number } = jwt_decode(token)
+    console.log("id.........." + decoded.id)
+    return decoded.id
   }
   isExpiredToken(token: string): boolean {
     const decoded: { exp: number } = jwt_decode(token)

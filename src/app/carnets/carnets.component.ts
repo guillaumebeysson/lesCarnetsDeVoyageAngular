@@ -25,43 +25,43 @@ export class CarnetsComponent implements OnInit {
     })
   }
 
-  onDelete(): void {
-    if (this.selectedCarnetId === undefined) {
-      console.error("L'id est indéfini");
-      return;
-    }
-    this.carnetService.removeCarnet(this.selectedCarnetId).subscribe({
-      next: () => 
-        this.carnetService.getCarnets().subscribe(carnets => {
-          this.carnets = carnets;
-          console.log("Carnet Supprimé !")
-        }), 
-      error: () =>
-        console.log("Erreur lors de la suppression du carnet")
-    });
+//   onDelete(): void {
+//     if (this.selectedCarnetId === undefined) {
+//       console.error("L'id est indéfini");
+//       return;
+//     }
+//     this.carnetService.removeCarnet(this.selectedCarnetId).subscribe({
+//       next: () => 
+//         this.carnetService.getCarnets().subscribe(carnets => {
+//           this.carnets = carnets;
+//           console.log("Carnet Supprimé !")
+//         }), 
+//       error: () =>
+//         console.log("Erreur lors de la suppression du carnet")
+//     });
 
-    this.selectedCarnetId = undefined;
-    this.showModalDelete = false;
-  }
+//     this.selectedCarnetId = undefined;
+//     this.showModalDelete = false;
+//   }
   
-  showModalDelete: boolean = false;
+//   showModalDelete: boolean = false;
 
-onModal(id?: number) {
-  if (id === undefined) {
-    console.error("L'id est indéfini");
-    return;
-  } else {
-    this.showModalDelete = true;
-    this.selectedCarnetId = id;
-  }
-  console.log(this.showModalDelete)
-  console.log("id..........."+id);
+// onModal(id?: number) {
+//   if (id === undefined) {
+//     console.error("L'id est indéfini");
+//     return;
+//   } else {
+//     this.showModalDelete = true;
+//     this.selectedCarnetId = id;
+//   }
+//   console.log(this.showModalDelete)
+//   console.log("id..........."+id);
   
-}
+// }
 
-closeModal(){
-  this.showModalDelete = false;
-}
+// closeModal(){
+//   this.showModalDelete = false;
+// }
 
 
 }

@@ -1,5 +1,8 @@
+import { User } from "./user";
+
 export interface Carnet {
     id?: number;
+    author?: User;
     title?: string;
     introduction?: string;
     description?: string;
