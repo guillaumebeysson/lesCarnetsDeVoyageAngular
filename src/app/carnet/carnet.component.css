@@ -1,20 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap");
 
-.container{
+.container {
     font-family: "montserrat";
 }
+
 span {
     display: block;
-    width: 30%; /*or whatever width you want the effect of <hr>*/
+    width: 30%;
+    /*or whatever width you want the effect of <hr>*/
     border-top: 2px solid black;
     margin: 0 auto;
 }
+
 /*SECTION BARCARNET*/
-.barCarnet{
+.barCarnet {
     align-items: center;
     font-weight: 400;
 }
-.barCarnet .btnAbo button{
+
+.barCarnet .btnAbo button {
     border: none;
     background-color: rgb(220, 20, 20);
     border: solid 1px #fff;
@@ -22,64 +26,90 @@ span {
     padding: 10px;
     border-radius: 5px;
 }
-.barCarnet .btnAbo button:hover{
+
+.barCarnet .btnAbo button:hover {
     border: solid 1px rgb(220, 20, 20);
     background-color: #fff;
     color: rgb(220, 20, 20);
 }
-.barCarnet .element{
+
+.barCarnet .element {
     margin: 10px;
     cursor: pointer;
 }
-#dateCarnet{
+
+#dateCarnet {
     cursor: auto;
 }
-.fa-user{
+
+.fa-user {
     transition: all 0.5s ease-in-out;
     cursor: pointer;
 }
-.user:hover .fa-user{
+
+.user:hover .fa-user {
     transform: rotate(360deg);
 }
-.fa-calendar-days{
+
+.fa-calendar-days {
     transition: all 0.5s ease-in-out;
 }
-.dateCarnet:hover .fa-calendar-days{
+
+.dateCarnet:hover .fa-calendar-days {
     transform: rotate(360deg);
 }
-.fa-heart{
+
+.fa-heart {
     transition: all 0.5s ease-in-out;
 }
-.like:hover .fa-heart{
+
+.like:hover .fa-heart {
     transform: rotate(360deg);
     color: rgb(220, 20, 20);
     cursor: pointer;
 }
-.fa-star{
+
+.fa-star {
     transition: all 0.5s ease-in-out;
 }
-.favoris:hover .fa-star{
+
+.favoris:hover .fa-star {
     transform: rotate(140deg);
     color: gold;
     cursor: pointer;
 }
-.flag a{
+
+.flag a {
     text-decoration: none;
     color: unset;
 }
-.fa-flag{
+
+.fa-flag {
     transition: all 0.5s ease-in-out;
 }
-.flag:hover .fa-flag{
+
+.flag:hover .fa-flag {
     transform: rotateY(180deg);
     cursor: pointer;
 }
+
 /*SECTION INTRODUCTION*/
-section p{
+section p {
     align-items: center;
     align-self: center;
 }
-section img{
+
+section img {
     border-radius: 15px;
     cursor: pointer;
+}
+
+.introduction img {
+    object-fit: cover;
+}
+
+@media(max-width:600px) {
+    #carnetInformations {
+        flex-direction: column;
+    }
 }

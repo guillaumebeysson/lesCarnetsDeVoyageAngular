@@ -66,6 +66,7 @@ span {
   height: 12rem;
   width: 18rem;
   display: block;
+  object-fit: cover;
 }
 
 .Card .details h5 {

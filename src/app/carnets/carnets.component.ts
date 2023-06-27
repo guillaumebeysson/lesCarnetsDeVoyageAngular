@@ -19,7 +19,7 @@ export class CarnetsComponent implements OnInit {
   constructor(private carnetService: CarnetService,private router: Router) { }
 
   ngOnInit(): void {
-    this.carnetService.getCarnets().subscribe(res => {
+    this.carnetService.getCarnetsReverseOrder().subscribe(res => {
       this.carnets = res;
       console.log(this.carnets)
     })

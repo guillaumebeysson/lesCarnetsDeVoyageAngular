@@ -3,53 +3,84 @@
   <div id="btn-post-carnet">
     <button routerLink="/createCarnet">Poste un carnet</button>
   </div>
+
+
   <div id="personalInformations">
-    <h2 class="my-3">Mes informations personnelles:</h2>
-    <ul>
-      <li>Name: {{nom}}</li>
-      <li>Email: {{userObject?.email}}</li>
-      <li>Nationalité:
-        <select>
-          <option>-- choisir --</option>
-          <option *ngFor="let pays of paysListe" [value]="pays.translations.fra.common">{{pays.translations.fra.common}}
-          </option>
-        </select>
-      </li>
-    </ul>
+    <div class="d-flex justify-content-around mt-5 btnsProfil">
+      <h2 id="btnCarnets" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="true"
+        aria-controls="collapseExample">
+        Mes informations personnelles
+      </h2>
+      <h2 id="btnCarnets" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="true"
+        aria-controls="collapseExample1">
+        Mes carnets
+      </h2>
+      <h2 id="btnCarnets" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="true"
+        aria-controls="collapseExample2">
+        Mes carnets favoris
+      </h2>
+      <h2 id="btnCarnets" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="true"
+        aria-controls="collapseExample1 collapseExample1 collapseExample2">
+        Tout afficher
+      </h2>
+    </div>
   </div>
 
-  <h2 class="my-3">Mes carnets:</h2>
-  <div id="carnets">
-    <div *ngFor="let carnet of carnets">
-      <div class="Card">
-        <div class="details">
-          <div class="card-img-opened">
-            <img src="http://localhost:8080/files/{{carnet.picture1}}" class="card-img-top" alt="..." />
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">
-              {{carnet.title}}
-            </h5>
-            <p class="pseudo text-secondary">
-              @{{carnet.country}}
-            </p>
-            <p id="description" class="card-text">
-              {{carnet.description}}
-            </p>
-            <a [routerLink]="'../../carnets/' + carnet?.id"
-              class="btn btn-primary rounded-pill d-flex justify-content-center">Découvrir</a>
-          </div>
-          <div class="modifyOrDelete">
-            <div>
-              <a class="modify"><i class="fa-solid fa-pen-to-square"></i> Modifier</a>
-            </div>
-            <div>
-              <a class="delete" (click)="onModal(carnet?.id)"><i class="fa-solid fa-trash-can"></i> Supprimer</a>
+  <span class="my-5"></span>
+
+  <div class="collapse show mt-3 multi-collapse" id="collapseExample">
+    <h4 class="mb-4">Mes informations personnelles</h4>
+    <div class="card-body">
+      <ul>
+        <li>Nom: <strong>{{userObject?.username}}</strong></li>
+        <li>Email: <strong>{{userObject?.email}}</strong></li>
+      </ul>
+    </div>
+    <span class="my-5"></span>
+  </div>
+
+  <div class="collapse show multi-collapse" id="collapseExample1">
+    <h4 class="mb-4">Mes carnets</h4>
+    <div class="card-body">
+      <div id="carnets">
+        <div *ngFor="let carnet of carnets">
+          <div class="Card">
+            <div class="details">
+              <div class="card-img-opened">
+                <img src="http://localhost:8080/files/{{carnet.picture1}}" class="card-img-top" alt="..." />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">
+                  {{carnet.title}}
+                </h5>
+                <p class="pseudo text-secondary">
+                  @{{carnet.country}}
+                </p>
+                <p id="description" class="card-text">
+                  {{carnet.description}}
+                </p>
+                <a [routerLink]="'../../carnets/' + carnet?.id"
+                  class="btn btn-primary rounded-pill d-flex justify-content-center">Découvrir</a>
+              </div>
+              <div class="modifyOrDelete">
+                <div>
+                  <a class="modify"><i class="fa-solid fa-pen-to-square"></i> Modifier</a>
+                </div>
+                <div>
+                  <a class="delete" (click)="onModal(carnet?.id)"><i class="fa-solid fa-trash-can"></i> Supprimer</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <span class="my-5"></span>
     </div>
+  </div>
+
+  <div class="collapse show multi-collapse" id="collapseExample2">
+    <h4 class="mb-4">Mes carnets favoris</h4>
+    <span class="my-5"></span>
   </div>
 
   <div id="modalDelete" *ngIf="showModalDelete">
@@ -60,9 +91,5 @@
       <a id="validDelete" (click)="onDelete()"><i class="fa-solid fa-check"></i></a>
       <a id="unValidDelete" (click)="closeModal()"><i class="fa-solid fa-xmark"></i></a>
     </div>
-  </div>
-
-  <div id="carnetsFavoris">
-    <h2 class="my-3">Mes carnets favoris:</h2>
   </div>
 </div>

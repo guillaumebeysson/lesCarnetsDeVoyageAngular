@@ -1,3 +1,54 @@
+.collapse {
+    &:not(.show) {
+        display: none;
+    }
+}
+
+.collapsing {
+    height: 0;
+    overflow: hidden;
+    @include transition($transition-collapse);
+}
+
+span {
+    width: 100%;
+    border-top: 3px solid #FDAC0F !important;
+}
+
+h2 {
+    margin: 10px;
+    transition: all ease-in-out 0.1s;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    align-items: center;
+    background-color: #0f89a3;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fafafa;
+    border: solid 1px #0f89a3;
+    width: 280px;
+}
+
+h2:hover {
+    background-color: #fafafa;
+    color: #0f89a3;
+}
+
+h4 {
+    text-transform: uppercase;
+    color: #0f89a3;
+    text-align: center;
+}
+
+#btnCarnets {
+    cursor: pointer !important;
+}
+
+
 #personalInformations ul {
     display: flex;
     flex-direction: row;
@@ -10,10 +61,11 @@
 
 #btn-post-carnet {
     text-align: center;
+    font-size: 20px;
 }
 
 #btn-post-carnet button {
-    padding: 10px;
+    padding: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
     border: solid 1px #FDAC0F;
@@ -27,12 +79,8 @@
 #btn-post-carnet button:hover {
     color: #FDAC0F;
     background-color: #ffffff;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-#carnetsFavoris {
-    margin-bottom: 300px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 #carnets {
@@ -40,7 +88,6 @@
     flex-wrap: wrap;
     align-content: center;
     justify-content: space-evenly;
-    margin-bottom: 150px;
 }
 
 .tittleH3 {
@@ -73,6 +120,17 @@ span {
     transition: 1s;
     position: relative;
     transform-style: preserve-3d;
+}
+
+.card-body ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.card-img-opened img {
+    object-fit: cover;
 }
 
 .Card .details {
@@ -153,6 +211,8 @@ span {
     justify-content: space-around;
     text-align: center;
     cursor: pointer;
+    position: relative;
+    bottom: 5px;
 }
 
 .modifyOrDelete a {
@@ -231,6 +291,17 @@ span {
 @media(max-width:992px) {
     h3 {
         font-size: 3em;
+    }
+
+    .btnsProfil {
+        display: flex;
+        flex-direction: column;
+        justify-content: center !important;
+        align-items: center;
+    }
+
+    .card-body ul {
+        flex-direction: column;
     }
 }
 

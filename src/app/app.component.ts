@@ -1,7 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { CommunicateService } from './services/communicate.service';
 import { User } from './interfaces/user';
 import { UserService } from './services/user.service';
@@ -25,6 +25,8 @@ export class AppComponent {
   color: string = 'black';
 
   constructor(private router: Router, private cs: CommunicateService, public userService: UserService, private http: HttpClient) { }
+
+  
 
   ngOnInit(): void {
 
@@ -103,6 +105,5 @@ export class AppComponent {
     }
     displayList?.setAttribute("style", "display: none;");
   }
-
 
 }

@@ -43,7 +43,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     //Permet de remonter en haut de la page au changement de Link
-    scrollPositionRestoration: 'top'
+    scrollPositionRestoration: 'enabled'
   })],
   exports: [RouterModule],
 })
