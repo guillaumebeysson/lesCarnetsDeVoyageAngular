@@ -46,6 +46,20 @@ export class CarnetService {
     }
     return this.http.post<void>(`${this.url}/createCarnet`, data);
   }
+  updateCarnet(c: Carnet, picture1File?: File, picture2File?: File, picture3File?: File): Observable<void> {
+    const data = new FormData();
+    data.append("carnet", new Blob([JSON.stringify(c)], { type: "application/json" }));
+    if (picture1File !== undefined) {
+      data.append("picture1", picture1File, picture1File.name);
+    }
+    if (picture2File !== undefined) {
+      data.append("picture2", picture2File, picture2File.name);
+    }
+    if (picture3File !== undefined) {
+      data.append("picture3", picture3File, picture3File.name);
+    }
+    return this.http.put<void>(`${this.url}/updateCarnet`, data);
+  }
 
   removeCarnet(id?: number): Observable<boolean> {
     return this.http.delete<boolean>(`${this.url}/delete/${id}`);

@@ -1,0 +1,181 @@
+h1 {
+    text-align: center;
+
+}
+
+section {
+    margin: 50px 0;
+}
+
+.separator {
+    display: block;
+    width: 90%;
+    height: 1px;
+    background-color: grey;
+    margin: 0 auto;
+}
+
+#carnetTitle input {
+    height: 70px;
+    min-width: 500px;
+    text-align: center;
+    color: #FDAC0F;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#carnetInformations input,
+select {
+    width: 300px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FDAC0F;
+    font-weight: bold;
+}
+
+#carnetInformations select option {
+    color: #FDAC0F;
+}
+
+#carnetInformations p {
+    margin: 0;
+}
+
+textarea {
+    border: solid 2px #0f89a3;
+    overflow: hidden;
+}
+
+#introductionAndPicture1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#introduction {
+    width: 600px;
+    border-radius: 5px;
+    min-height: 300px;
+    padding: 10px;
+}
+
+.compteurs {
+    color: #0f89a3;
+    /* width: 50px; */
+    position: relative;
+    top: -30px;
+    text-align: center;
+}
+
+
+
+.drop-zone {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    text-align: center;
+    width: 360px;
+    height: 360px;
+    border: dashed 1px grey;
+}
+
+.drop-zone.drag-over {
+    background-color: #f7f7f7;
+}
+
+.imgPreview {
+    position: relative;
+    top: -68px;
+    border-radius: 5px;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.img-add {
+    margin: 10px;
+}
+
+.img-add p {
+    position: relative;
+    top: 140px;
+}
+
+#descriptionAndPictures {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#description {
+    width: 600px;
+    border-radius: 5px;
+    min-height: 300px;
+    padding: 10px;
+}
+
+#DescriptionsPictures {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#btnValid {
+    text-align: center;
+}
+
+#btnValid button {
+    border: solid 1px #FDAC0F;
+    border-radius: 5px;
+    padding: 10px;
+    color: #0f89a3;
+    font-size: 20px;
+    color: #FDAC0F;
+    background-color: #fafafa;
+}
+
+#btnValid button:hover {
+    background-color: #FDAC0F;
+    color: #fff;
+}
+
+@media(max-width:1202px) {
+    #introductionAndPicture1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #introduction {
+        width: 80vw;
+        min-height: 300px;
+        padding: 10px;
+    }
+
+    #description {
+        width: 80vw;
+        min-height: 300px;
+        padding: 10px;
+    }
+
+    #DescriptionsPictures {
+        flex-direction: column;
+    }
+}
+
+@media(max-width:700px) {
+    #carnetTitle input {
+        min-width: 200px;
+    }
+
+    #inputTitle {
+        width: 100%;
+    }
+
+    #carnetInformations {
+        flex-direction: column;
+        align-items: center;
+    }
+}

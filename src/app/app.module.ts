@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +24,10 @@ import { CountryComponent } from './country/country.component';
 import { AuthComponent } from './auth/auth.component';
 import { SearchComponent } from './search/search.component';
 import { ConditionsGeneralesUtilisationComponent } from './conditions-generales-utilisation/conditions-generales-utilisation.component';
+import { UpdateCarnetComponent } from './update-carnet/update-carnet.component';
+import { JwtService } from './services/jwt-service.service';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.component';
 
 
 @NgModule({
@@ -46,6 +50,9 @@ import { ConditionsGeneralesUtilisationComponent } from './conditions-generales-
     AuthComponent,
     SearchComponent,
     ConditionsGeneralesUtilisationComponent,
+    UpdateCarnetComponent,
+    NotFoundPageComponent,
+    ForbiddenPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +68,7 @@ import { ConditionsGeneralesUtilisationComponent } from './conditions-generales-
       echarts: () => import('echarts'), // or import('./path-to-my-custom-echarts')
     }),
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

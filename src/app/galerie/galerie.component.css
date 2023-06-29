@@ -50,4 +50,16 @@ span {
     h3 {
         font-size: 2em;
     }
+
+    .container .blockImg {
+        width: 125px;
+        height: 125px;
+        border-radius: 15px;
+    }
+
+    .container .blockImg img {
+        width: 125px;
+        height: 125px;
+
+    }
 }

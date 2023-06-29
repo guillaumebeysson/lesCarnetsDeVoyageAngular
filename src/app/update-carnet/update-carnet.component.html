@@ -1,0 +1,126 @@
+<div class="container">
+  <h1 class="mt-5">Modifier ce carnet</h1>
+  <div id="carnetTitle" class="text-center my-5 w-auto">
+    <input type="text" id="inputTitle" placeholder="Titre du carnet *" [(ngModel)]="carnet.title">
+  </div>
+
+  <section id="carnetInformations" class="d-flex justify-content-around">
+    <div id="leftPartCarnetInformations">
+      <div class="my-2">
+        <p><i class="fas fa-user"></i> {{carnet.author?.username}}</p>
+      </div>
+      <div id="countrySelected" class="my-2">
+        <p><i class="fas fa-flag"></i> Pays *</p>
+        <select name="countries" id="countries" class="form-control" [(ngModel)]="carnet.country">
+          <option *ngFor="let pays of paysListe" [value]="pays.translations.fra.common">{{pays.translations.fra.common}}
+          </option>
+        </select>
+      </div>
+      <div id="timeTravel" class="my-2">
+        <p><i class="fas fa-hourglass-start"></i> Durée du voyage (jours)</p>
+        <input type="number" min="0" class="form-control" placeholder="0" [(ngModel)]="carnet.durationTrip">
+      </div>
+      <div id="departurePeriod" class="my-2">
+        <p><i class="far fa-calendar-alt"></i> Période de départ</p>
+        <select name="month" id="month" class="form-control" [(ngModel)]="carnet.departurePeriod">
+          <option selected value=""> </option>
+          <option value="Janvier">Janvier</option>
+          <option value="Fevrier">Fervrier</option>
+          <option value="Mars">Mars</option>
+          <option value="avril">avril</option>
+          <option value="Mai">Mai</option>
+          <option value="Juin">Juin</option>
+          <option value="Juillet">Juillet</option>
+          <option value="Aout">Aout</option>
+          <option value="Septembre">Septembre</option>
+          <option value="Octobre">Octobre</option>
+          <option value="Novembre">Novembre</option>
+          <option value="decembre">decembre</option>
+        </select>
+      </div>
+    </div>
+    <div id="rightPartCarnetInformations">
+      <div id="city" class="my-2">
+        <p><i class="fa-solid fa-city"></i> Ville</p>
+        <input type="text" name="city" id="city" class="form-control" [(ngModel)]="carnet.city">
+      </div>
+      <div id="organisation" class="my-2">
+        <p><i class="fas fa-route"></i> Organisation</p>
+        <select name="organisation" id="organisationEnum" class="form-control" [(ngModel)]="carnet.organisation">
+          <option value="Personnel">Itinéraire personnel</option>
+          <option value="Agence de voyage">Agence de voyage</option>
+          <option value="Aucun">Aucun itinéraire prédéfini</option>
+        </select>
+      </div>
+      <div id="situation" class="my-2">
+        <p><i class="fas fa-hiking"></i> Situation</p>
+        <select name="situation" id="situation" class="form-control" [(ngModel)]="carnet.situation">
+          <option value="Solo">Solo</option>
+          <option value="Famille">Famille</option>
+          <option value="Amis">Amis</option>
+          <option value="Couple">Couple</option>
+        </select>
+      </div>
+      <div id="" class="my-2">
+        <p><i class="fas fa-shuttle-van"></i> Moyen de transport</p>
+        <select id="transport" name="transport" class="form-control" [(ngModel)]="carnet.transport">
+          <option value="Van">Camping-car / Van</option>
+          <option value="Avion">Avion</option>
+          <option value="Moto">Moto</option>
+          <option value="Train">Train</option>
+          <option value="Voiture">Voiture</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <section id="introductionAndPicture1">
+    <div id="introduction">
+      <textarea name="introduction" id="introduction" #introduction maxlength="600"
+        [(ngModel)]="carnet.introduction"></textarea>
+      <div class="compteurs" id="compteur-textarea-introduction">{{carnet.introduction?.length}}/600</div>
+    </div>
+    <div class="img-add">
+      <input type="file" id="fileUploadInput1" (change)="handleFileInput($event, 1)" #fileInput1 hidden>
+      <div class="drop-zone" (drop)="onDrop($event, 1)" (dragover)="onDragOver($event)"
+        (dragleave)="onDragLeave($event)" (click)="fileInput1.click()">
+        <p class="m-0">Cliquer... <br> ou <br> Glissez-déposez une image ici...</p>
+        <img *ngIf="imageUrl1" class="imgPreview" [src]="imageUrl1">
+      </div>
+    </div>
+  </section>
+
+  <span class="separator"></span>
+
+  <section id="descriptionAndPictures">
+    <div id="description">
+      <textarea name="description" id="description" #description maxlength="600"
+        [(ngModel)]="carnet.description"></textarea>
+      <div class="compteurs" id="compteur-textarea-description">{{carnet.description?.length}}/600</div>
+    </div>
+    <div id="DescriptionsPictures">
+      <div class="img-add">
+        <input type="file" id="fileUploadInput2" (change)="handleFileInput($event, 2)" #fileInput2 hidden>
+        <div class="drop-zone" (drop)="onDrop($event, 2)" (dragover)="onDragOver($event)"
+          (dragleave)="onDragLeave($event)" (click)="fileInput2.click()">
+          <p class="m-0">Cliquer... <br> ou <br> Glissez-déposez une image ici...</p>
+          <img *ngIf="imageUrl2" class="imgPreview" [src]="imageUrl2">
+        </div>
+      </div>
+      <div class="img-add">
+        <input type="file" id="fileUploadInput3" (change)="handleFileInput($event, 3)" #fileInput3 hidden>
+        <div class="drop-zone" (drop)="onDrop($event, 3)" (dragover)="onDragOver($event)"
+          (dragleave)="onDragLeave($event)" (click)="fileInput3.click()">
+          <p class="m-0">Cliquer... <br> ou <br> Glissez-déposez une image ici...</p>
+          <img *ngIf="imageUrl3" class="imgPreview" [src]="imageUrl3">
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="btnValid" class="my-5">
+    <button (click)="validCarnet()">Valider le carnet</button>
+    <p *ngIf="erreur" class="text-danger my-3">Les champs Titre, Pays, Introduction, Description et 3
+      photos sont obligatoires ! </p>
+  </div>
+
+</div>

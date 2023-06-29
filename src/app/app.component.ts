@@ -32,7 +32,6 @@ export class AppComponent {
 
     // Activation du mode Jour / Nuit suivant l'heure de l'utilisateur
     const heureActuelle = new Date().getHours();
-    console.log(heureActuelle)
     this.backgroundColor = (heureActuelle >= 8 && heureActuelle < 20) ? '' : 'black';
     this.color = (heureActuelle >= 8 && heureActuelle < 20) ? 'black' : 'grey';
 
@@ -41,14 +40,12 @@ export class AppComponent {
     const token = localStorage.getItem('tokens');
     if (token) {
       this.nom = this.userService.getUsernameFromToken(token);
-      console.log("nom in token....." + this.nom)
     }
     //récupère la liste des pays via l'api
     this.http.get<any[]>('https://restcountries.com/v3.1/all').subscribe(listePays => {
       const translation = listePays.map(pays => pays.translations.fra.common);
       // stocke la liste des pays en francais par ordre alphabetique
       this.listePays = translation.sort((a, b) => a.localeCompare(b));
-      console.log("list" + JSON.stringify(listePays));
     });
   }
 
@@ -65,7 +62,6 @@ export class AppComponent {
 
     if (valeur.length >= 1) {
       this.paysRecherches = this.rechercherDansListe(valeur);
-      console.log("Liste des pays affichés..." + this.paysRecherches);
 
       if (this.paysRecherches.length === 0) {
         displayList?.setAttribute("style", "display: none;");

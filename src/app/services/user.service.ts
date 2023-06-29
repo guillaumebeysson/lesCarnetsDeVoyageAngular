@@ -32,12 +32,10 @@ export class UserService {
 
   getUsernameFromToken(token: string) {
     const decoded: { sub: string } = jwt_decode(token)
-    console.log("username.........." + decoded.sub)
     return decoded.sub
   }
   getIdFromToken(token: string) {
     const decoded: { id: number } = jwt_decode(token)
-    console.log("id.........." + decoded.id)
     return decoded.id
   }
   isExpiredToken(token: string): boolean {

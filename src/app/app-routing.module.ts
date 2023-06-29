@@ -18,26 +18,32 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './guards/auth.guard';
 import { SearchComponent } from './search/search.component';
 import { ConditionsGeneralesUtilisationComponent } from './conditions-generales-utilisation/conditions-generales-utilisation.component';
+import { UpdateCarnetComponent } from './update-carnet/update-carnet.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { ForbiddenPageComponent } from './forbidden-page/forbidden-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'auth', component: AuthComponent },
-  { path: 'carnets/:id', component: CarnetComponent, canActivate: [AuthGuard] },
-  { path: 'galerie', component: GalerieComponent, canActivate: [AuthGuard] },
-  { path: 'carnets/randomCarnet', component: CarnetComponent, canActivate: [AuthGuard] },
-  { path: 'carnets', component: CarnetsComponent, canActivate: [AuthGuard] },
-  { path: 'destinations', component: DestinationsComponent, canActivate: [AuthGuard] },
+  { path: 'carnets/:id', component: CarnetComponent },
+  { path: 'galerie', component: GalerieComponent },
+  { path: 'carnets/randomCarnet', component: CarnetComponent },
+  { path: 'carnets', component: CarnetsComponent },
+  { path: 'destinations', component: DestinationsComponent },
   { path: 'myAccount/:nom', component: MyAccountComponent, canActivate: [AuthGuard] },
   { path: 'createCarnet', component: CreateCarnetComponent, canActivate: [AuthGuard] },
-  { path: 'destinations/amerique', component: AmeriqueComponent, canActivate: [AuthGuard] },
-  { path: 'destinations/europe', component: EuropeComponent, canActivate: [AuthGuard] },
-  { path: 'destinations/afrique', component: AfriqueComponent, canActivate: [AuthGuard] },
-  { path: 'destinations/asie', component: AsieComponent, canActivate: [AuthGuard] },
-  { path: 'destinations/oceanie', component: OceanieComponent, canActivate: [AuthGuard] },
-  { path: 'carnets/country/:country', component: CountryComponent, canActivate: [AuthGuard] },
-  { path: 'search', component: SearchComponent, canActivate: [AuthGuard] },
+  { path: 'updateCarnet/:id', component: UpdateCarnetComponent },
+  { path: 'destinations/amerique', component: AmeriqueComponent },
+  { path: 'destinations/europe', component: EuropeComponent },
+  { path: 'destinations/afrique', component: AfriqueComponent },
+  { path: 'destinations/asie', component: AsieComponent },
+  { path: 'destinations/oceanie', component: OceanieComponent },
+  { path: 'carnets/country/:country', component: CountryComponent },
+  { path: 'search', component: SearchComponent},
   { path: 'cgu', component: ConditionsGeneralesUtilisationComponent },
+  { path: '404', component: NotFoundPageComponent },
+  { path: '403', component: ForbiddenPageComponent },
 ];
 
 @NgModule({
